@@ -13,7 +13,7 @@ export const shorts: Short[] = [
     title: "Rwanda Business News", 
     views: "1.2M", 
     platform: "YouTube",
-    videoUrl: "https://www.youtube.com/embed/wu6hrLr4va8"
+    videoUrl: ""
   },
   {
     id: "s2",
@@ -21,7 +21,7 @@ export const shorts: Short[] = [
     title: "Africa markets: quick update",
     views: "820K",
     platform: "YouTube",
-    videoUrl: "https://www.youtube.com/embed/9bZkp7q19f0"
+    videoUrl: ""
   },
   {
     id: "s3",
@@ -29,7 +29,7 @@ export const shorts: Short[] = [
     title: "Tech in Africa: 60-second summary",
     views: "540K",
     platform: "YouTube",
-    videoUrl: "https://www.youtube.com/embed/kJQP7kiw5Fk"
+    videoUrl: ""
   }
 ];
 
@@ -40,7 +40,7 @@ export const videos: Video[] = [
     category: "Tech",
     channel: "The Dash Africa",
     thumbnail: "https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=800&h=450&fit=crop",
-    videoUrl: "https://www.youtube.com/embed/8UVNT4wvIGY",
+    videoUrl: "",
     description: "A full-length breakdown of digital banking trends, regulation, and consumer behavior across African markets."
   },
   {
@@ -49,7 +49,7 @@ export const videos: Video[] = [
     category: "Business",
     channel: "The Dash Africa",
     thumbnail: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=450&fit=crop",
-    videoUrl: "https://www.youtube.com/embed/ZXsQAXx_ao0",
+    videoUrl: "",
     description: "What makes businesses survive past year one: systems, customers, capital discipline, and execution."
   },
   {
@@ -58,7 +58,7 @@ export const videos: Video[] = [
     category: "Energy & Petrochemicals",
     channel: "The Dash Africa",
     thumbnail: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=450&fit=crop",
-    videoUrl: "https://www.youtube.com/embed/3fumBcKC6RE",
+    videoUrl: "",
     description: "A practical overview of energy project economics, timelines, and risk factors in the region."
   }
 ];
