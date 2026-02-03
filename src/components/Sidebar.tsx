@@ -25,6 +25,28 @@ export const Sidebar = ({ topStories, setPage }: SidebarProps) => {
 
   return (
     <aside className="space-y-8">
+      {/* Navigation Links */}
+      <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
+        <h3 className="font-bold text-sm uppercase tracking-wide text-gray-500 mb-4 px-1">
+          Company
+        </h3>
+        <div className="space-y-1">
+          {menuItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setPage(item.id)}
+              className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold text-gray-700 hover:bg-orange-50 hover:text-orange-700 transition-all group"
+            >
+              <div className="flex items-center gap-3">
+                <item.icon className="w-4 h-4 text-gray-400 group-hover:text-orange-500 transition-colors" />
+                {item.label}
+              </div>
+              <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity translate-x-[-10px] group-hover:translate-x-0 text-orange-500" />
+            </button>
+          ))}
+        </div>
+      </div>
+
       {/* Nicholas K. Quest Sponsored Ad */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
@@ -126,33 +148,15 @@ export const Sidebar = ({ topStories, setPage }: SidebarProps) => {
         </div>
       </motion.div>
 
-      {/* Navigation Links */}
-      <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
-        <h3 className="font-bold text-sm uppercase tracking-wide text-gray-500 mb-4 px-1">
-          Company
-        </h3>
-        <div className="space-y-1">
-          {menuItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => setPage(item.id)}
-              className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold text-gray-700 hover:bg-orange-50 hover:text-orange-700 transition-all group"
-            >
-              <div className="flex items-center gap-3">
-                <item.icon className="w-4 h-4 text-gray-400 group-hover:text-orange-500 transition-colors" />
-                {item.label}
-              </div>
-              <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity translate-x-[-10px] group-hover:translate-x-0 text-orange-500" />
-            </button>
-          ))}
-        </div>
-      </div>
-
       {/* Ad Slot 1 */}
       <div className="cursor-pointer group" onClick={() => window.open(ads[1].link, '_blank')}>
-        <div className="relative rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+        <div className="relative rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm ring-1 ring-black/5 hover:shadow-lg transition-shadow duration-300">
           <img src={ads[1].image} alt="Ad" className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
-          <div className="absolute top-2 left-2 bg-gray-900/80 text-white text-[10px] px-1.5 py-0.5 rounded backdrop-blur-sm">Ad</div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="absolute top-2 left-2 bg-gray-900/80 text-white text-[10px] px-2 py-0.5 rounded-full backdrop-blur-sm tracking-wider uppercase">Ad</div>
+          <div className="absolute bottom-2 left-2 right-2 text-white text-xs font-bold drop-shadow-sm">
+            {ads[1].title}
+          </div>
         </div>
       </div>
 
@@ -192,9 +196,13 @@ export const Sidebar = ({ topStories, setPage }: SidebarProps) => {
 
       {/* Ad Slot 2 */}
       <div className="cursor-pointer group" onClick={() => window.open(ads[2].link, '_blank')}>
-        <div className="relative rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+        <div className="relative rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm ring-1 ring-black/5 hover:shadow-lg transition-shadow duration-300">
           <img src={ads[2].image} alt="Ad" className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500" />
-          <div className="absolute top-2 left-2 bg-gray-900/80 text-white text-[10px] px-1.5 py-0.5 rounded backdrop-blur-sm">Ad</div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="absolute top-2 left-2 bg-gray-900/80 text-white text-[10px] px-2 py-0.5 rounded-full backdrop-blur-sm tracking-wider uppercase">Ad</div>
+          <div className="absolute bottom-2 left-2 right-2 text-white text-xs font-bold drop-shadow-sm">
+            {ads[2].title}
+          </div>
         </div>
       </div>
     </aside>

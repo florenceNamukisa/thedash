@@ -126,10 +126,15 @@ export const Videos = ({ allPosts, onSelectPost }: VideosProps) => {
                   <button
                     key={p.id}
                     onClick={() => onSelectPost(p)}
-                    className="w-full text-left p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                    className="w-full text-left p-3 rounded-lg border border-transparent hover:border-orange-200 hover:bg-orange-50/50 hover:shadow-sm transition-all group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
                   >
-                    <p className="text-sm font-bold text-gray-900 leading-snug">{p.title}</p>
+                    <p className="text-sm font-bold text-gray-900 leading-snug group-hover:text-orange-700 transition-colors">
+                      {p.title}
+                    </p>
                     <p className="text-xs text-gray-500 mt-1 line-clamp-2">{p.excerpt}</p>
+                    <span className="mt-2 inline-flex items-center text-[11px] font-semibold text-orange-600 opacity-0 group-hover:opacity-100 transition-opacity">
+                      Read article →
+                    </span>
                   </button>
                 ))}
               </div>

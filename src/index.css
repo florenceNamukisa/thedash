@@ -12,6 +12,30 @@
   }
 }
 
+@layer base {
+  a,
+  button {
+    cursor: pointer;
+  }
+
+  a {
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    text-decoration-color: transparent;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  }
+
+  a:hover {
+    text-decoration-color: currentColor;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-brand-red);
+    outline-offset: 2px;
+  }
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0);

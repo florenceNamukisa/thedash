@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+﻿import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ArrowUp } from "lucide-react";
 import { Navbar } from "./components/Navbar";
 import { BreakingTicker } from "./components/BreakingTicker";
 import { CategoryNavbar } from "./components/CategoryNavbar";
@@ -35,6 +36,7 @@ function App() {
   const [visibleCount, setVisibleCount] = useState(POSTS_PER_PAGE);
   const [loading, setLoading] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
   const loadMoreRef = useRef<HTMLDivElement>(null);
 
   // Filter posts
@@ -74,6 +76,14 @@ function App() {
     setVisibleCount(POSTS_PER_PAGE + 5); // +5 to account for slider posts
     setSelectedPost(null);
   }, [selectedCategory]);
+
+  // Floating back-to-top visibility
+  useEffect(() => {
+    const onScroll = () => setShowBackToTop(window.scrollY > 400);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const renderContent = () => {
     if (selectedPost) {
@@ -200,7 +210,7 @@ function App() {
 
       <footer className="bg-black text-white py-12 mt-12 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-blue via-brand-red to-brand-blue" />
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
           <div className="md:col-span-2">
             <div className="mb-4">
               <img src="/logo.png" alt="The Dash Africa" className="h-12 w-auto object-contain brightness-0 invert" />
@@ -210,6 +220,30 @@ function App() {
             </p>
           </div>
           <div>
+            <h4 className="font-bold mb-4 text-brand-blue uppercase tracking-widest text-xs">Quick Links</h4>
+            <ul className="space-y-2 text-sm text-gray-400">
+              {[
+                { label: "About Us", page: "about" },
+                { label: "Careers", page: "careers" },
+                { label: "Contact", page: "contact" },
+                { label: "Subscribe", page: "subscribe" },
+                { label: "Videos", page: "videos" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <button
+                    className="hover:text-white transition-colors hover:translate-x-1 inline-flex items-center gap-2 duration-200"
+                    onClick={() => {
+                      setCurrentPage(item.page);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
             <h4 className="font-bold mb-4 text-brand-blue uppercase tracking-widest text-xs">Sections</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               {["World", "Politics", "Business", "Technology", "Sports"].map(item => (
@@ -217,7 +251,7 @@ function App() {
               ))}
             </ul>
           </div>
-          <div>
+          <div className="flex flex-col gap-6">
             <h4 className="font-bold mb-4 text-brand-blue uppercase tracking-widest text-xs">Follow Us</h4>
             <div className="flex gap-4">
               {["Twitter", "Facebook", "Instagram", "LinkedIn"].map(social => (
@@ -226,12 +260,36 @@ function App() {
                 </a>
               ))}
             </div>
+            <button
+              onClick={() => {
+                setCurrentPage("home");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="self-start inline-flex items-center gap-2 rounded-full border border-gray-700 px-4 py-2 text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-white hover:border-white transition-colors"
+            >
+              Back to Top
+              <ArrowUp className="w-4 h-4" />
+            </button>
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
           © 2024 The Dash Africa. All rights reserved.
         </div>
       </footer>
+      {showBackToTop && (
+        <button
+          onClick={() => {
+            setCurrentPage("home");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          className="fixed bottom-6 right-24 z-40 inline-flex items-center gap-2 rounded-full bg-black text-white px-4 py-3 text-xs font-bold uppercase tracking-wider shadow-lg hover:bg-gray-800 transition-colors"
+          aria-label="Back to top"
+          title="Back to top"
+        >
+          <ArrowUp className="w-4 h-4" />
+          Top
+        </button>
+      )}
       <WhatsAppButton />
     </div>
   );

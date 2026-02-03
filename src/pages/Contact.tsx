@@ -18,8 +18,7 @@ export const Contact = () => (
             </div>
             <div>
               <h3 className="font-bold text-gray-900">Email</h3>
-              <p className="text-gray-600">support@newsdaily.com</p>
-              <p className="text-gray-600">press@newsdaily.com</p>
+              <p className="text-gray-600">legacyafrica.uganda@gmail.com</p>
             </div>
           </div>
           
@@ -29,7 +28,7 @@ export const Contact = () => (
             </div>
             <div>
               <h3 className="font-bold text-gray-900">Phone</h3>
-              <p className="text-gray-600">+1 (555) 123-4567</p>
+              <p className="text-gray-600">+256 704 597816</p>
             </div>
           </div>
 
@@ -38,8 +37,12 @@ export const Contact = () => (
               <MapPin className="w-5 h-5 text-orange-600" />
             </div>
             <div>
-              <h3 className="font-bold text-gray-900">Headquarters</h3>
-              <p className="text-gray-600">123 Media Street<br />New York, NY 10001</p>
+              <h3 className="font-bold text-gray-900">Physical Address</h3>
+              <p className="text-gray-600">
+                PO Box 103503 Kampala GPO<br />
+                Mutungo Hill, Ring Road<br />
+                Plot 628, Ssetongo Close
+              </p>
             </div>
           </div>
         </div>
@@ -51,16 +54,16 @@ export const Contact = () => (
           <div className="grid grid-cols-2 gap-4">
             <div>
               <Label htmlFor="firstName">First Name</Label>
-              <Input id="firstName" placeholder="John" />
+              <Input id="firstName" placeholder="Florence" />
             </div>
             <div>
               <Label htmlFor="lastName">Last Name</Label>
-              <Input id="lastName" placeholder="Doe" />
+              <Input id="lastName" placeholder="Namukisa" />
             </div>
           </div>
           <div>
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="john@example.com" />
+            <Input id="email" type="email" placeholder="florence1@gmail.com" />
           </div>
           <div>
             <Label htmlFor="message">Message</Label>
