@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Post } from "../types";
-import { ChevronLeft, ChevronRight, Play, Clock } from "lucide-react";
+import { ChevronLeft, ChevronRight, Clock } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "./ui/button";
 import { formatDate } from "../utils/formatDate";
@@ -84,13 +84,6 @@ export const HeroSlider = ({ posts, onPostClick }: HeroSliderProps) => {
               alt={currentPost.title}
               className="w-full h-full object-cover"
             />
-            
-            {/* Play Button Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-2xl backdrop-blur-sm transform scale-90 group-hover:scale-100 transition-transform">
-                <Play className="w-6 h-6 text-black fill-black ml-1" />
-              </div>
-            </div>
           </motion.div>
         </AnimatePresence>
 

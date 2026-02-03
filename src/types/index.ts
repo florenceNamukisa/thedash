@@ -7,6 +7,18 @@ export interface Post {
   date: Date;
   image: string;
   isBreaking?: boolean;
+  content?: string;
+}
+
+export interface Video {
+  id: string;
+  title: string;
+  category: string;
+  channel?: string;
+  date?: Date;
+  thumbnail: string;
+  videoUrl: string;
+  description?: string;
 }
 
 export interface Ad {
@@ -22,4 +34,5 @@ export interface Short {
   title: string;
   views: string;
   platform: "YouTube" | "TikTok";
+  videoUrl?: string;
 }

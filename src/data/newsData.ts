@@ -1,58 +1,102 @@
-import { Post, Ad, Short } from "../types";
-
-export const posts: Post[] = Array.from({ length: 30 }, (_, i) => ({
-  id: `post-${i}`,
-  title: [
-    "Africa Tech Summit 2024: Innovators gather in Nairobi",
-    "Global Markets Rally as Inflation Data Shows Improvement",
-    "Exclusive: Inside the new eco-friendly urban projects in Lagos",
-    "Sports: Champions League Final Preview - Tactical Analysis",
-    "Politics: New trade agreements signed between East African nations",
-    "Health: Breakthrough in malaria prevention research announced",
-    "Entertainment: Afrobeats star announces world tour dates",
-    "Education: Digital literacy initiative reaches 1M students"
-  ][i % 8] + ` - Update #${i + 1}`,
-  excerpt: "In a significant development today, experts have weighed in on the ongoing situation. The implications for the region could be substantial, with many watching closely.",
-  category: ["Tech", "Business", "World", "Sports", "Politics", "Health", "Entertainment", "Education"][i % 8],
-  author: ["Amara Okafor", "John Doe", "Fatima Ali", "Kwame Mensah"][i % 4],
-  date: new Date(Date.now() - Math.random() * 1000000000),
-  image: `https://picsum.photos/seed/news${i}/800/600`,
-  isBreaking: Math.random() > 0.85,
-}));
-
-export const heroSlides = [
-  {
-    id: "h1",
-    title: "The Future of African Tech is Here",
-    subtitle: "Exclusive coverage from the Nairobi Innovation Summit",
-    image: "https://picsum.photos/seed/hero1/1200/600",
-    category: "Technology"
-  },
-  {
-    id: "h2",
-    title: "Markets Surge to Record Highs",
-    subtitle: "Investors optimistic about Q3 earnings reports",
-    image: "https://picsum.photos/seed/hero2/1200/600",
-    category: "Business"
-  },
-  {
-    id: "h3",
-    title: "Climate Action: Africa's Green Revolution",
-    subtitle: "New sustainable energy projects launched across the continent",
-    image: "https://picsum.photos/seed/hero3/1200/600",
-    category: "Environment"
-  }
-];
-
-export const shorts: Short[] = [
-  { id: "s1", thumbnail: "https://picsum.photos/seed/short1/300/500", title: "Top 10 Gadgets 2024", views: "1.2M", platform: "YouTube" },
-  { id: "s2", thumbnail: "https://picsum.photos/seed/short2/300/500", title: "Street Food in Lagos", views: "850K", platform: "TikTok" },
-  { id: "s3", thumbnail: "https://picsum.photos/seed/short3/300/500", title: "Dance Challenge Viral", views: "3.4M", platform: "TikTok" },
-  { id: "s4", thumbnail: "https://picsum.photos/seed/short4/300/500", title: "Quick Finance Tips", views: "500K", platform: "YouTube" },
-];
+import { Post, Ad, Short, Video } from "../types";
 
 export const ads: Ad[] = [
   { id: "a1", image: "https://picsum.photos/seed/ad1/1200/100", title: "Jumia Black Friday", link: "#" },
   { id: "a2", image: "https://picsum.photos/seed/ad2/300/250", title: "Betway Winner", link: "#" },
-  { id: "a3", image: "https://picsum.photos/seed/ad3/300/600", title: "Travel Start", link: "#" },
+  { id: "a3", image: "https://picsum.photos/seed/ad3/300/600", title: "Travel Start", link: "#" }
 ];
+
+export const shorts: Short[] = [
+  { 
+    id: "s1", 
+    thumbnail: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=500&fit=crop", 
+    title: "Rwanda Business News", 
+    views: "1.2M", 
+    platform: "YouTube",
+    videoUrl: "https://www.youtube.com/embed/wu6hrLr4va8"
+  },
+  {
+    id: "s2",
+    thumbnail: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=300&h=500&fit=crop",
+    title: "Africa markets: quick update",
+    views: "820K",
+    platform: "YouTube",
+    videoUrl: "https://www.youtube.com/embed/9bZkp7q19f0"
+  },
+  {
+    id: "s3",
+    thumbnail: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=300&h=500&fit=crop",
+    title: "Tech in Africa: 60-second summary",
+    views: "540K",
+    platform: "YouTube",
+    videoUrl: "https://www.youtube.com/embed/kJQP7kiw5Fk"
+  }
+];
+
+export const videos: Video[] = [
+  {
+    id: "v1",
+    title: "Digital Banking in Africa: What’s Changing and Why It Matters",
+    category: "Tech",
+    channel: "The Dash Africa",
+    thumbnail: "https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=800&h=450&fit=crop",
+    videoUrl: "https://www.youtube.com/embed/8UVNT4wvIGY",
+    description: "A full-length breakdown of digital banking trends, regulation, and consumer behavior across African markets."
+  },
+  {
+    id: "v2",
+    title: "Entrepreneurship in Africa: The Real Playbook",
+    category: "Business",
+    channel: "The Dash Africa",
+    thumbnail: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=450&fit=crop",
+    videoUrl: "https://www.youtube.com/embed/ZXsQAXx_ao0",
+    description: "What makes businesses survive past year one: systems, customers, capital discipline, and execution."
+  },
+  {
+    id: "v3",
+    title: "Energy Projects in East Africa: What Investors Watch",
+    category: "Energy & Petrochemicals",
+    channel: "The Dash Africa",
+    thumbnail: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=450&fit=crop",
+    videoUrl: "https://www.youtube.com/embed/3fumBcKC6RE",
+    description: "A practical overview of energy project economics, timelines, and risk factors in the region."
+  }
+];
+
+export const heroSlides = [
+  {
+    id: "h1",
+    title: "Rwanda and Zimbabwe Strengthen Economic Partnerships",
+    subtitle: "Strategic agreements signed to boost bilateral trade and investment",
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=600&fit=crop",
+    category: "Business"
+  }
+];
+
+export const posts: Post[] = [
+  {
+    id: "rwanda-zimbabwe-2021",
+    title: "Rwanda and Zimbabwe Sign Land Mark Cooperation Agreements",
+    excerpt: "Rwanda and Zimbabwe have signed several Memorandums of Understanding spanning agriculture, ICT, tourism, and e-government.",
+    category: "Business",
+    author: "Nicholas K. Quest",
+    date: new Date("2021-09-28"),
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=450&fit=crop",
+    isBreaking: true
+  }
+];
+
+export const authorData = {
+  name: "Nicholas K. Quest",
+  role: "Chief Editor & Best Selling Author",
+  image: "https://secure.gravatar.com/avatar/2c9dd009be0eb4f4028bf05804676611d3c7d11f399ef801ab2d915a48565c52?s=160&d=mm&r=g",
+  bio: "With over a decade of experience in African business journalism, Nicholas brings unparalleled insights into the continent evolving economic landscape.",
+  books: [
+    {
+      id: 1,
+      title: "The Digital Horizon",
+      price: "$24.99",
+      cover: "https://picsum.photos/seed/book1/300/450"
+    }
+  ]
+};

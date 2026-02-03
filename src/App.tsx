@@ -14,9 +14,10 @@ import { NewsDetail } from "./components/NewsDetail";
 import { About } from "./pages/About";
 import { Careers } from "./pages/Careers";
 import { Contact } from "./pages/Contact";
+import { Subscription } from "./pages/Subscription";
+import { Videos } from "./pages/Videos";
 import { allPosts } from "./data/posts";
 import { Post } from "./types";
-import { Button } from "./components/ui/button.tsx";
 
 const POSTS_PER_PAGE = 6;
 
@@ -76,13 +77,22 @@ function App() {
 
   const renderContent = () => {
     if (selectedPost) {
-      return <NewsDetail post={selectedPost} onBack={() => setSelectedPost(null)} />;
+      return (
+        <NewsDetail
+          post={selectedPost}
+          allPosts={allPosts}
+          onBack={() => setSelectedPost(null)}
+          onSelectPost={setSelectedPost}
+        />
+      );
     }
 
     switch (currentPage) {
       case "about": return <About />;
       case "careers": return <Careers />;
       case "contact": return <Contact />;
+      case "subscribe": return <Subscription />;
+      case "videos": return <Videos allPosts={allPosts} onSelectPost={setSelectedPost} />;
       default:
         return (
           <motion.div

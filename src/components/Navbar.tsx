@@ -50,6 +50,12 @@ export const Navbar = ({
     setIsMobileMenuOpen(false);
   };
 
+  const handleVideosClick = () => {
+    setPage("videos");
+    setIsDropdownOpen(false);
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
@@ -87,6 +93,17 @@ export const Navbar = ({
           >
             <Home className="w-4 h-4" />
             Home
+          </button>
+
+          {/* Videos */}
+          <button
+            onClick={handleVideosClick}
+            className={`px-4 py-2 text-sm font-bold rounded-md transition-all ${currentPage === "videos"
+              ? "bg-blue-50 text-brand-blue"
+              : "text-gray-600 hover:bg-gray-50 hover:text-brand-blue"
+              }`}
+          >
+            Videos
           </button>
 
           {/* Main Categories */}
@@ -187,6 +204,20 @@ export const Navbar = ({
               Home
             </div>
             {currentPage === "home" && selectedCategory === "All" && <div className="w-1.5 h-1.5 bg-brand-blue rounded-full" />}
+          </button>
+
+          <button
+            onClick={handleVideosClick}
+            className={`w-full text-left px-4 py-3 text-sm font-bold rounded-md flex items-center justify-between ${currentPage === "videos"
+              ? "bg-blue-50 text-brand-blue"
+              : "text-gray-600 hover:bg-gray-50"
+              }`}
+          >
+            <div className="flex items-center gap-2">
+              <span className="w-4 h-4 inline-flex items-center justify-center">▶</span>
+              Videos
+            </div>
+            {currentPage === "videos" && <div className="w-1.5 h-1.5 bg-brand-blue rounded-full" />}
           </button>
 
           {/* Mobile Categories List */}
