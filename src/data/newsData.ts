@@ -3,8 +3,7 @@ import { Post, Ad, Short, Video } from "../types";
 export const ads: Ad[] = [
   { id: "a1", image: "/ads/nbk-premier-billboard.svg", title: "NBK Premier Solutions Ltd", link: "https://www.nbkpremier.com" },
   { id: "a2", image: "/legacy_pearls_ad.jpg", title: "Legacy Pearls", link: "#" },
-  { id: "a3", image: "/ads/nbk-premier-300x600.svg", title: "NBK Premier Solutions", link: "https://www.nbkpremier.com" },
-  { id: "a4", image: "/ads/nbk-premier-300x250.svg", title: "NBK Premier Services", link: "https://www.nbkpremier.com" }
+  { id: "a3", image: "/legacy_pearls_ad.jpg", title: "Legacy Pearls", link: "#" }
 ];
 
 export const shorts: Short[] = [

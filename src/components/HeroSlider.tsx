@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, Clock } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "./ui/button";
 import { formatDate } from "../utils/formatDate";
+import { authorData } from "../data/newsData";
 
 interface HeroSliderProps {
   posts: Post[];
@@ -154,7 +155,7 @@ export const HeroSlider = ({ posts, onPostClick }: HeroSliderProps) => {
           <div className="flex items-center gap-3 md:ml-4">
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 rounded-full overflow-hidden border border-gray-200">
-                <img src={`https://picsum.photos/seed/${currentPost.author}/100/100`} alt={currentPost.author} />
+                <img src={authorData.image} alt={currentPost.author} />
               </div>
               <div className="text-sm">
                 <p className="font-bold text-gray-900">{currentPost.author}</p>

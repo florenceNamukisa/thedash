@@ -2,6 +2,7 @@ import { Post } from "../types";
 import { formatDate } from "../utils/formatDate";
 import { formatContent } from "../utils/contentFormatter";
 import { ArrowLeft, Clock, User, Share2, Bookmark } from "lucide-react";
+import { authorData } from "../data/newsData";
 import { Button } from "./ui/button";
 
 interface NewsDetailProps {
@@ -50,7 +51,7 @@ export const NewsDetail = ({ post, allPosts, onBack, onSelectPost }: NewsDetailP
           <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 border-b border-gray-100 pb-6">
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 bg-gray-200 rounded-full overflow-hidden">
-                <img src={`https://picsum.photos/seed/${post.author}/100/100`} alt={post.author} />
+                <img src={authorData.image} alt={post.author} />
               </div>
               <div>
                 <p className="font-bold text-gray-900">{post.author}</p>

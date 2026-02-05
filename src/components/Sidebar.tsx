@@ -148,15 +148,19 @@ export const Sidebar = ({ topStories, setPage }: SidebarProps) => {
         </div>
       </motion.div>
 
-      {/* Ad Slot 1 */}
-      <div className="cursor-pointer group" onClick={() => window.open(ads[1].link, '_blank')}>
+      {/* Ad Slot 1 - Video */}
+      <div className="group">
         <div className="relative rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm ring-1 ring-black/5 hover:shadow-lg transition-shadow duration-300">
-          <img src={ads[1].image} alt="Ad" className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+          <video
+            className="w-full h-48 object-cover"
+            src="/ads/nbk.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/ads/nbk_premier_ad.png"
+          />
           <div className="absolute top-2 left-2 bg-gray-900/80 text-white text-[10px] px-2 py-0.5 rounded-full backdrop-blur-sm tracking-wider uppercase">Ad</div>
-          <div className="absolute bottom-2 left-2 right-2 text-white text-xs font-bold drop-shadow-sm">
-            {ads[1].title}
-          </div>
         </div>
       </div>
 
