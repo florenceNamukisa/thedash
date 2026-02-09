@@ -1,17 +1,19 @@
 import { useState } from "react";
-import { CheckCircle2, Zap, Shield, Crown, ArrowRight } from "lucide-react";
+import { CheckCircle2, MailCheck, ArrowRight } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 
 export const Subscription = () => {
-  const [plan, setPlan] = useState<"monthly" | "yearly">("monthly");
   const [email, setEmail] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const benefits = [
-    { icon: Zap, text: "Ad-free browsing experience" },
-    { icon: Shield, text: "Exclusive investigative reports" },
-    { icon: Crown, text: "Access to premium video content" },
-    { icon: CheckCircle2, text: "Daily newsletter digest" },
+    { icon: CheckCircle2, text: "Free email updates for new articles" },
+    { icon: MailCheck, text: "Instant notification when a story is published" },
+    { icon: CheckCircle2, text: "Weekly highlights from TheDashAfrica" },
+    { icon: CheckCircle2, text: "Unsubscribe anytime" },
   ];
 
   return (
@@ -20,10 +22,10 @@ export const Subscription = () => {
       <div className="bg-black text-white py-16 mb-12">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-black mb-4 tracking-tight">
-            Unlock the <span className="text-orange-500">Full Story</span>
+            Get TheDashAfrica <span className="text-orange-500">Email Updates</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Join thousands of readers who support independent African journalism. Get unlimited access to premium content.
+            Subscribe for free and get notified whenever a new article is published.
           </p>
         </div>
       </div>
@@ -50,59 +52,94 @@ export const Subscription = () => {
           </div>
         </div>
 
-        {/* Pricing Card */}
+        {/* Free Subscription Card */}
         <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 sticky top-24">
-          <div className="flex justify-center mb-8 bg-gray-100 p-1 rounded-lg">
-            <button
-              onClick={() => setPlan("monthly")}
-              className={`flex-1 py-2 text-sm font-bold rounded-md transition-all ${
-                plan === "monthly" ? "bg-white shadow text-gray-900" : "text-gray-500 hover:text-gray-900"
-              }`}
-            >
-              Monthly
-            </button>
-            <button
-              onClick={() => setPlan("yearly")}
-              className={`flex-1 py-2 text-sm font-bold rounded-md transition-all relative ${
-                plan === "yearly" ? "bg-white shadow text-gray-900" : "text-gray-500 hover:text-gray-900"
-              }`}
-            >
-              Yearly
-              <span className="absolute -top-3 -right-2 bg-orange-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold">
-                SAVE 20%
-              </span>
-            </button>
-          </div>
+          {!isSubmitted ? (
+            <>
+              <h3 className="text-2xl font-black text-gray-900 mb-3">Free Email Alerts</h3>
+              <p className="text-gray-600 text-sm mb-6">
+                Enter your email and we will send a confirmation. You will receive updates whenever a new article is posted.
+              </p>
 
-          <div className="text-center mb-8">
-            <div className="text-5xl font-black text-gray-900 mb-2">
-              ${plan === "monthly" ? "4.99" : "47.90"}
-              <span className="text-lg font-normal text-gray-500">/{plan === "monthly" ? "mo" : "yr"}</span>
+              <form
+                className="space-y-4 mb-6"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  if (!email.trim()) return;
+                  setError(null);
+                  setIsSubmitting(true);
+                  try {
+                    const response = await fetch("/api/subscribe.php", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ email: email.trim() })
+                    });
+                    const data = await response.json().catch(() => ({}));
+                    if (!response.ok || !data?.ok) {
+                      throw new Error(data?.error || "Subscription failed");
+                    }
+                    setIsSubmitted(true);
+                  } catch (err) {
+                    setError("We could not subscribe you right now. Please try again.");
+                  } finally {
+                    setIsSubmitting(false);
+                  }
+                }}
+              >
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                  <Input
+                    type="email"
+                    placeholder="you@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="h-12"
+                  />
+                </div>
+                <Button
+                  className="w-full bg-orange-600 hover:bg-orange-700 text-white h-12 text-lg font-bold shadow-lg shadow-orange-600/30"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Submitting..." : "Subscribe Free"}
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </form>
+
+              {error && (
+                <p className="text-xs text-red-600 text-center mb-4">
+                  {error}
+                </p>
+              )}
+
+              <div className="text-center">
+                <p className="text-xs text-gray-400">
+                  We will never charge you or share your email.
+                </p>
+              </div>
+            </>
+          ) : (
+            <div className="text-center">
+              <div className="mx-auto mb-4 w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                <MailCheck className="w-6 h-6 text-green-600" />
+              </div>
+              <h3 className="text-2xl font-black text-gray-900 mb-2">
+                Thank you for subscribing to TheDashAfrica blogs.
+              </h3>
+              <p className="text-gray-600 text-sm">
+                We will notify you whenever a new article is uploaded.
+              </p>
+              <Button
+                variant="ghost"
+                className="mt-6"
+                onClick={() => {
+                  setEmail("");
+                  setIsSubmitted(false);
+                }}
+              >
+                Add another email
+              </Button>
             </div>
-            <p className="text-gray-500 text-sm">Billed {plan === "monthly" ? "monthly" : "annually"}. Cancel anytime.</p>
-          </div>
-
-          <form className="space-y-4 mb-6" onSubmit={(e) => e.preventDefault()}>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-              <Input 
-                type="email" 
-                placeholder="you@example.com" 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="h-12"
-              />
-            </div>
-            <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white h-12 text-lg font-bold shadow-lg shadow-orange-600/30">
-              Start Your Trial <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </form>
-
-          <div className="text-center">
-            <p className="text-xs text-gray-400">
-              By subscribing, you agree to our Terms of Service and Privacy Policy.
-            </p>
-          </div>
+          )}
         </div>
       </div>
     </div>

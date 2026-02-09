@@ -1,6 +1,6 @@
 import { Post } from "../types";
 import { formatDate } from "../utils/formatDate";
-import { TrendingUp, Info, Briefcase, Mail, ChevronRight, Facebook, Twitter, Instagram, ExternalLink, BookOpen, Star, ShoppingCart } from "lucide-react";
+import { TrendingUp, Info, Briefcase, Mail, ChevronRight, Facebook, Twitter, Instagram, BookOpen, Star, ShoppingCart, Home } from "lucide-react";
 import { motion } from "framer-motion";
 import { ads } from "../data/newsData";
 
@@ -18,6 +18,7 @@ const books = [
 
 export const Sidebar = ({ topStories, setPage }: SidebarProps) => {
   const menuItems = [
+    { id: "home", label: "Back Home", icon: Home },
     { id: "about", label: "About Us", icon: Info },
     { id: "careers", label: "Careers", icon: Briefcase },
     { id: "contact", label: "Contact", icon: Mail },
@@ -26,9 +27,9 @@ export const Sidebar = ({ topStories, setPage }: SidebarProps) => {
   return (
     <aside className="space-y-8">
       {/* Navigation Links */}
-      <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
+      <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm sticky top-16 z-20 md:static md:top-auto md:z-auto">
         <h3 className="font-bold text-sm uppercase tracking-wide text-gray-500 mb-4 px-1">
-          Company
+          About Us
         </h3>
         <div className="space-y-1">
           {menuItems.map((item) => (

@@ -1,7 +1,20 @@
 ﻿import { Award, Users, Globe, Target } from "lucide-react";
 
-export const About = () => (
+import { ArrowLeft } from "lucide-react";
+import { Button } from "../components/ui/button";
+
+export const About = ({ onBack }: { onBack?: () => void }) => (
   <div className="max-w-5xl mx-auto py-10 animate-in fade-in duration-500">
+    {onBack && (
+      <Button
+        variant="ghost"
+        onClick={onBack}
+        className="mb-6 pl-0 hover:bg-transparent text-gray-600 hover:text-black"
+      >
+        <ArrowLeft className="w-4 h-4 mr-2" />
+        Back to Home
+      </Button>
+    )}
     {/* Mission */}
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-center">
       <div className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 shadow-sm md:order-1">

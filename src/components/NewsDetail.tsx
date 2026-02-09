@@ -18,6 +18,27 @@ export const NewsDetail = ({ post, allPosts, onBack, onSelectPost }: NewsDetailP
     .filter((p) => p.category === post.category)
     .slice(0, 6);
 
+  const buildDefaultContent = () => {
+    return [
+      `**Overview**`,
+      `${post.excerpt} The story highlights the latest developments shaping ${post.category.toLowerCase()} and the wider regional market.`,
+      `**Why it matters**`,
+      `Stakeholders across Africa and the Middle East are watching this space for signals on growth, capital flows, and policy direction. The implications reach investors, operators, and regulators who need clear signals amid shifting global conditions.`,
+      `**Key takeaways**`,
+      `• Momentum is building around ${post.category.toLowerCase()} with measurable shifts in investment appetite and execution.`,
+      `• Policy choices and delivery timelines are becoming the main determinants of near-term performance.`,
+      `• Regional integration and cross-border capital are likely to shape the next phase of activity.`,
+      `**Quote**`,
+      `"The next growth cycle will reward institutions that execute early and manage risk with discipline."`,
+      `**What to watch**`,
+      `The next quarter should clarify whether the momentum is sustainable, especially as policymakers and industry leaders move from announcements to implementation.`
+    ].join("\n\n");
+  };
+
+  const contentToRender = post.content && post.content.length > 400
+    ? post.content
+    : `${post.content ? `${post.content}\n\n` : ""}${buildDefaultContent()}`;
+
   return (
     <div className="animate-in fade-in duration-300">
       {/* Back Button */}
@@ -89,41 +110,9 @@ export const NewsDetail = ({ post, allPosts, onBack, onSelectPost }: NewsDetailP
 
         {/* Content */}
         <div className="prose prose-lg max-w-none text-gray-800 leading-relaxed">
-          {post.content ? (
-            <div className="space-y-6">
-              {formatContent(post.content)}
-            </div>
-          ) : (
-            <>
-              <p className="text-xl font-medium text-gray-900 mb-6 first-letter:text-5xl first-letter:font-black first-letter:text-brand-red first-letter:float-left first-letter:mr-3">
-                {post.excerpt}
-              </p>
-
-              <p className="mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-
-              <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Key Developments</h3>
-
-              <p className="mb-4">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-
-              <blockquote className="border-l-4 border-brand-red pl-4 py-2 my-6 bg-gray-50 italic text-gray-700">
-                "This represents a paradigm shift in how we approach {post.category} in the modern era. The implications are profound."
-              </blockquote>
-
-              <p className="mb-4">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-              </p>
-
-              <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">What's Next?</h3>
-
-              <p className="mb-4">
-                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
-              </p>
-            </>
-          )}
+          <div className="space-y-6">
+            {formatContent(contentToRender)}
+          </div>
         </div>
 
         {/* Tags */}

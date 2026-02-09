@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import type { ReactNode } from "react";
 import { ArrowUp } from "lucide-react";
 import { Navbar } from "./components/Navbar";
 import { BreakingTicker } from "./components/BreakingTicker";
@@ -18,6 +19,8 @@ import { Contact } from "./pages/Contact";
 import { Subscription } from "./pages/Subscription";
 import { Videos } from "./pages/Videos";
 import { allPosts } from "./data/posts";
+import { latestArticles, localArticles, popularArticles, regionalArticles } from "./data/featuredArticles";
+import { formatDate } from "./utils/formatDate";
 import { Post } from "./types";
 
 const POSTS_PER_PAGE = 6;
@@ -38,6 +41,11 @@ function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const loadMoreRef = useRef<HTMLDivElement>(null);
+
+  const handleSetPage = (page: string) => {
+    setSelectedPost(null);
+    setCurrentPage(page);
+  };
 
   // Filter posts
   const filteredPosts = selectedCategory === "All"
@@ -85,24 +93,147 @@ function App() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Trigger email notifications when new articles appear (auto, no manual setup)
+  useEffect(() => {
+    try {
+      const key = "thedash_notify_ping";
+      const now = Date.now();
+      const last = Number(localStorage.getItem(key) || 0);
+      if (now - last < 15 * 60 * 1000) return;
+      localStorage.setItem(key, String(now));
+      fetch("/api/notify.php", { method: "POST" }).catch(() => {});
+    } catch {
+      fetch("/api/notify.php", { method: "POST" }).catch(() => {});
+    }
+  }, []);
+
+  const PageLayout = ({ children }: { children: ReactNode }) => (
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+      {/* Left Column: Trending Shorts */}
+      <div className="order-last lg:order-none lg:col-span-2 space-y-6">
+        <div className="bg-gray-50 p-4 rounded-xl border border-gray-100 lg:sticky lg:top-24 shadow-sm">
+          <h4 className="font-bold text-sm uppercase tracking-wide mb-3 text-gray-500 flex items-center gap-2">
+            <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+            Trending Shorts
+          </h4>
+          <div className="space-y-4">
+            {filteredPosts.slice(5, 8).map((post, index) => (
+              <motion.div
+                key={post.id}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="cursor-pointer group"
+                onClick={() => setSelectedPost(post)}
+              >
+                <div className="relative overflow-hidden rounded-lg mb-2">
+                  <img src={post.image} alt="" className="w-full h-24 object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
+                </div>
+                <h5 className="text-xs font-bold leading-tight group-hover:text-orange-600 transition-colors">{post.title}</h5>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Center Column */}
+      <div className="lg:col-span-7 space-y-8">
+        {children}
+      </div>
+
+      {/* Right Column */}
+      <div className="lg:col-span-3 order-last lg:order-none space-y-6">
+        <Sidebar topStories={topStories} setPage={handleSetPage} />
+
+        <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
+          <h3 className="text-sm font-bold uppercase tracking-wide text-gray-500 mb-4">
+            Local Articles
+          </h3>
+          <div className="space-y-3">
+            {localArticles.map((post) => (
+              <button
+                key={post.id}
+                onClick={() => setSelectedPost(post)}
+                className="w-full text-left p-3 rounded-lg border border-gray-100 hover:shadow-md transition-shadow group"
+              >
+                <p className="text-sm font-bold text-gray-900 leading-snug group-hover:text-orange-600 transition-colors line-clamp-2">
+                  {post.title}
+                </p>
+                <p className="text-xs text-gray-500 mt-1">{formatDate(post.date)}</p>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
+          <h3 className="text-sm font-bold uppercase tracking-wide text-gray-500 mb-4">
+            Regional Articles
+          </h3>
+          <div className="space-y-3">
+            {regionalArticles.map((post) => (
+              <button
+                key={post.id}
+                onClick={() => setSelectedPost(post)}
+                className="w-full text-left p-3 rounded-lg border border-gray-100 hover:shadow-md transition-shadow group"
+              >
+                <p className="text-sm font-bold text-gray-900 leading-snug group-hover:text-orange-600 transition-colors line-clamp-2">
+                  {post.title}
+                </p>
+                <p className="text-xs text-gray-500 mt-1">{formatDate(post.date)}</p>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   const renderContent = () => {
     if (selectedPost) {
       return (
-        <NewsDetail
-          post={selectedPost}
-          allPosts={allPosts}
-          onBack={() => setSelectedPost(null)}
-          onSelectPost={setSelectedPost}
-        />
+        <PageLayout>
+          <NewsDetail
+            post={selectedPost}
+            allPosts={allPosts}
+            onBack={() => setSelectedPost(null)}
+            onSelectPost={setSelectedPost}
+          />
+        </PageLayout>
       );
     }
 
     switch (currentPage) {
-      case "about": return <About />;
-      case "careers": return <Careers />;
-      case "contact": return <Contact />;
-      case "subscribe": return <Subscription />;
-      case "videos": return <Videos allPosts={allPosts} onSelectPost={setSelectedPost} />;
+      case "about":
+        return (
+          <PageLayout>
+            <About onBack={() => handleSetPage("home")} />
+          </PageLayout>
+        );
+      case "careers":
+        return (
+          <PageLayout>
+            <Careers />
+          </PageLayout>
+        );
+      case "contact":
+        return (
+          <PageLayout>
+            <Contact />
+          </PageLayout>
+        );
+      case "subscribe":
+        return (
+          <PageLayout>
+            <Subscription />
+          </PageLayout>
+        );
+      case "videos":
+        return (
+          <PageLayout>
+            <Videos allPosts={allPosts} onSelectPost={setSelectedPost} />
+          </PageLayout>
+        );
       default:
         return (
           <motion.div
@@ -112,74 +243,100 @@ function App() {
             exit="exit"
             variants={pageVariants}
           >
-            {/* Main Grid Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+            <PageLayout>
+              {/* Hero Slider */}
+              {sliderPosts.length > 0 && (
+                <HeroSlider posts={sliderPosts} onPostClick={setSelectedPost} />
+              )}
 
-              {/* Left Column */}
-              <div className="hidden lg:block lg:col-span-2 space-y-6">
-                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100 sticky top-24 shadow-sm">
-                  <h4 className="font-bold text-sm uppercase tracking-wide mb-3 text-gray-500 flex items-center gap-2">
-                    <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
-                    Trending Shorts
-                  </h4>
-                  <div className="space-y-4">
-                    {filteredPosts.slice(5, 8).map((post, index) => (
-                      <motion.div
-                        key={post.id}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                        className="cursor-pointer group"
-                        onClick={() => setSelectedPost(post)}
-                      >
-                        <div className="relative overflow-hidden rounded-lg mb-2">
-                          <img src={post.image} alt="" className="w-full h-24 object-cover transition-transform duration-500 group-hover:scale-110" />
-                          <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
-                        </div>
-                        <h5 className="text-xs font-bold leading-tight group-hover:text-orange-600 transition-colors">{post.title}</h5>
-                      </motion.div>
-                    ))}
-                  </div>
+              {/* Latest Articles */}
+              <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
+                <div className="flex items-center justify-between mb-4 border-b border-gray-100 pb-3">
+                  <h3 className="text-lg font-black uppercase tracking-wide">Latest Articles</h3>
+                  <span className="text-xs font-semibold text-gray-400">Latest coverage</span>
                 </div>
-              </div>
-
-              {/* Center Column */}
-              <div className="lg:col-span-7 space-y-8">
-                {/* Hero Slider */}
-                {sliderPosts.length > 0 && (
-                  <HeroSlider posts={sliderPosts} onPostClick={setSelectedPost} />
-                )}
-
-                {/* In-Feed Ad */}
-                <div className="flex justify-center my-6">
-                  <AdPlaceholder width="100%" maxWidth="728px" height="90px" label="728x90 Ad" />
-                </div>
-
-                <div className="space-y-6">
-                  {feedPosts.map((post, index) => (
-                    <NewsCard key={post.id} post={post} onClick={setSelectedPost} index={index} />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {latestArticles.map((post) => (
+                    <button
+                      key={post.id}
+                      onClick={() => setSelectedPost(post)}
+                      className="group flex gap-3 rounded-xl border border-gray-100 p-3 text-left hover:shadow-md transition-shadow"
+                    >
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-20 h-20 rounded-lg object-cover"
+                      />
+                      <div className="min-w-0">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-orange-600">
+                          {post.category}
+                        </span>
+                        <h4 className="font-bold text-gray-900 leading-snug mt-1 line-clamp-2 group-hover:text-orange-600 transition-colors">
+                          {post.title}
+                        </h4>
+                        <p className="text-xs text-gray-500 mt-1">{formatDate(post.date)}</p>
+                      </div>
+                    </button>
                   ))}
                 </div>
+              </div>
 
-                {/* Loading / Sentinel */}
-                <div ref={loadMoreRef} className="py-8 text-center">
-                  {loading ? (
-                    <div className="flex justify-center">
-                      <div className="w-8 h-8 border-4 border-orange-500 border-t-transparent rounded-full animate-spin" />
-                    </div>
-                  ) : visibleCount < filteredPosts.length ? (
-                    <p className="text-gray-400 text-sm animate-pulse">Scroll to load more</p>
-                  ) : (
-                    <p className="text-gray-400 text-sm">No more stories</p>
-                  )}
+              {/* Popular Articles */}
+              <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
+                <div className="flex items-center justify-between mb-4 border-b border-gray-100 pb-3">
+                  <h3 className="text-lg font-black uppercase tracking-wide">Popular Articles</h3>
+                  <span className="text-xs font-semibold text-gray-400">Most read</span>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {popularArticles.map((post) => (
+                    <button
+                      key={post.id}
+                      onClick={() => setSelectedPost(post)}
+                      className="group flex gap-3 rounded-xl border border-gray-100 p-3 text-left hover:shadow-md transition-shadow"
+                    >
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-20 h-20 rounded-lg object-cover"
+                      />
+                      <div className="min-w-0">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-orange-600">
+                          {post.category}
+                        </span>
+                        <h4 className="font-bold text-gray-900 leading-snug mt-1 line-clamp-2 group-hover:text-orange-600 transition-colors">
+                          {post.title}
+                        </h4>
+                        <p className="text-xs text-gray-500 mt-1">{formatDate(post.date)}</p>
+                      </div>
+                    </button>
+                  ))}
                 </div>
               </div>
 
-              {/* Right Column */}
-              <div className="lg:col-span-3 order-first lg:order-last">
-                <Sidebar topStories={topStories} setPage={setCurrentPage} />
+              {/* In-Feed Ad */}
+              <div className="flex justify-center my-6">
+                <AdPlaceholder width="100%" maxWidth="728px" height="90px" label="728x90 Ad" />
               </div>
-            </div>
+
+              <div className="space-y-6">
+                {feedPosts.map((post, index) => (
+                  <NewsCard key={post.id} post={post} onClick={setSelectedPost} index={index} />
+                ))}
+              </div>
+
+              {/* Loading / Sentinel */}
+              <div ref={loadMoreRef} className="py-8 text-center">
+                {loading ? (
+                  <div className="flex justify-center">
+                    <div className="w-8 h-8 border-4 border-orange-500 border-t-transparent rounded-full animate-spin" />
+                  </div>
+                ) : visibleCount < filteredPosts.length ? (
+                  <p className="text-gray-400 text-sm animate-pulse">Scroll to load more</p>
+                ) : (
+                  <p className="text-gray-400 text-sm">No more stories</p>
+                )}
+              </div>
+            </PageLayout>
           </motion.div>
         );
     }
@@ -189,7 +346,7 @@ function App() {
     <div className="min-h-screen bg-white flex flex-col font-sans">
       <Navbar
         currentPage={currentPage}
-        setPage={setCurrentPage}
+        setPage={handleSetPage}
         isMobileMenuOpen={isMobileMenuOpen}
         setIsMobileMenuOpen={setIsMobileMenuOpen}
         selectedCategory={selectedCategory}
@@ -233,7 +390,7 @@ function App() {
                   <button
                     className="hover:text-white transition-colors hover:translate-x-1 inline-flex items-center gap-2 duration-200"
                     onClick={() => {
-                      setCurrentPage(item.page);
+                      handleSetPage(item.page);
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
                   >
@@ -262,7 +419,7 @@ function App() {
             </div>
             <button
               onClick={() => {
-                setCurrentPage("home");
+                handleSetPage("home");
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
               className="self-start inline-flex items-center gap-2 rounded-full border border-gray-700 px-4 py-2 text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-white hover:border-white transition-colors"
@@ -279,7 +436,7 @@ function App() {
       {showBackToTop && (
         <button
           onClick={() => {
-            setCurrentPage("home");
+            handleSetPage("home");
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
           className="fixed bottom-6 right-24 z-40 inline-flex items-center gap-2 rounded-full bg-black text-white px-4 py-3 text-xs font-bold uppercase tracking-wider shadow-lg hover:bg-gray-800 transition-colors"
