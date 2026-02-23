@@ -1,34 +1,47 @@
-import { useState, useEffect } from "react";
-import { ads } from "../data/newsData";
+import { useState, useRef } from "react";
+
+const videoAds = [
+  { id: 1, video: "/ads/nbk.mp4", title: "NBK Premier Solutions", link: "https://nbkpremier.com" },
+  { id: 2, video: "/ads/legacy.mp4", title: "Legacy Pearls", link: "https://legacypearlsafrica.com/" },
+  { id: 3, video: "/ads/suavis.mp4", title: "Suavis Radio", link: "https://suavisradio.com/" }
+];
 
 export const BillboardAd = () => {
   const [currentAd, setCurrentAd] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentAd((prev) => (prev + 1) % ads.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
+  const handleVideoEnd = () => {
+    setCurrentAd((prev) => (prev + 1) % videoAds.length);
+  };
 
-  const ad = ads[currentAd];
+  const ad = videoAds[currentAd];
 
   return (
-    <div
-      className="w-full bg-gray-100 relative overflow-hidden group cursor-pointer rounded-xl border border-gray-200 shadow-sm ring-1 ring-black/5 hover:shadow-lg transition-shadow"
-      onClick={() => window.open(ad.link, "_blank")}
-    >
-      <img
-        src={ad.image}
-        alt="Advertisement"
-        className="w-full h-24 md:h-32 object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/30 opacity-0 group-hover:opacity-100 transition-opacity" />
-      <div className="absolute top-2 left-2 bg-black/70 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
-        Sponsored
-      </div>
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 md:p-4">
-        <p className="text-white font-bold text-sm md:text-lg truncate">{ad.title}</p>
+    <div className="w-full bg-white py-3">
+      <div className="max-w-7xl mx-auto px-4">
+        <div
+          className="relative group cursor-pointer rounded-lg overflow-hidden shadow-md border border-gray-200 bg-gray-100"
+          onClick={() => window.open(ad.link, "_blank")}
+        >
+          <video
+            ref={videoRef}
+            key={ad.id}
+            className="w-full h-32 md:h-40 lg:h-48 object-cover"
+            src={ad.video}
+            autoPlay
+            muted
+            playsInline
+            onEnded={handleVideoEnd}
+          />
+          <div className="absolute top-3 right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded shadow-lg">
+            SPONSORED
+          </div>
+          <div className="absolute bottom-3 left-3 right-3">
+            <p className="text-white font-bold text-lg drop-shadow-lg bg-black/50 px-2 py-1 rounded">
+              {ad.title}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

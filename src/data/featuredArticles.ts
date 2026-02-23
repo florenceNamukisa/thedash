@@ -2,6 +2,42 @@
 
 export const latestArticles: Post[] = [
   {
+    id: "what-you-want-wants-you-2020",
+    title: "What You Want, Wants You - To Seek for It!",
+    excerpt: "Ask and it will be given to you; seek and you will find; knock and the door will be opened to you. This isn't just a spiritual suggestion; it's a universal principle for achievement.",
+    category: "Society & Lifestyle",
+    author: "Nicholas K. Quest",
+    date: new Date("2020-04-17"),
+    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=450&fit=crop",
+  },
+  {
+    id: "calm-seas-skilled-sailors-2020",
+    title: "Calm Seas Never Make Skilled Sailors!",
+    excerpt: "Show me a man who never had struggles and challenges and I show you a man who never lived. Challenges are inevitable in human life, and they shape who we become.",
+    category: "Society & Lifestyle",
+    author: "Nicholas K. Quest",
+    date: new Date("2020-05-20"),
+    image: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800&h=450&fit=crop",
+  },
+  {
+    id: "succeed-young-strategize-2021",
+    title: "Succeed Young - Strategize Today - Henry Kachaje!",
+    excerpt: "You are the core ingredient to your success. Understanding this fundamental truth is the first step toward meaningful achievement.",
+    category: "Business",
+    author: "Nicholas K. Quest",
+    date: new Date("2021-01-20"),
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=450&fit=crop",
+  },
+  {
+    id: "work-permits-uganda-2021",
+    title: "Getting and Processing Work Permits in Uganda",
+    excerpt: "Starting a business or investment or just working in Uganda is a great and exciting experience, however the legalities can be difficult to navigate if you don't have the right information and guidance.",
+    category: "Legal & Consulting",
+    author: "Nicholas K. Quest",
+    date: new Date("2021-03-15"),
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=450&fit=crop",
+  },
+  {
     id: "latest-kenya-economic-update-2025",
     title: "Kenya economic update: growth resilient, fiscal pressures intensify",
     excerpt:

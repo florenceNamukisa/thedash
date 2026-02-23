@@ -9,7 +9,7 @@ import { WhatsAppButton } from "./components/WhatsAppButton.tsx";
 import { HeroSlider } from "./components/HeroSlider"; // Updated import
 import { NewsCard } from "./components/NewsCard";
 import { Sidebar } from "./components/Sidebar";
-import { AdPlaceholder } from "./components/AdPlaceholder";
+import { InFeedAd } from "./components/InFeedAd";
 import { BillboardAd } from "./components/BillboardAd";
 import { ShortsSection } from "./components/ShortsSection";
 import { NewsDetail } from "./components/NewsDetail";
@@ -20,6 +20,7 @@ import { Subscription } from "./pages/Subscription";
 import { Videos } from "./pages/Videos";
 import { allPosts } from "./data/posts";
 import { latestArticles, localArticles, popularArticles, regionalArticles } from "./data/featuredArticles";
+import { videos } from "./data/newsData";
 import { formatDate } from "./utils/formatDate";
 import { Post } from "./types";
 
@@ -314,9 +315,7 @@ function App() {
               </div>
 
               {/* In-Feed Ad */}
-              <div className="flex justify-center my-6">
-                <AdPlaceholder width="100%" maxWidth="728px" height="90px" label="728x90 Ad" />
-              </div>
+              <InFeedAd />
 
               <div className="space-y-6">
                 {feedPosts.map((post, index) => (

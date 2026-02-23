@@ -24,6 +24,7 @@ export interface Video {
 export interface Ad {
   id: string;
   image: string;
+  video?: string;
   title: string;
   link: string;
 }

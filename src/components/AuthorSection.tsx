@@ -97,7 +97,7 @@ export const AuthorSection = () => {
                     exit={{ scale: 0.8, opacity: 0, rotateY: -15 }}
                     transition={{ duration: 0.4 }}
                     className="relative w-64 cursor-pointer group"
-                    onClick={() => setSelectedBook(authorData.books[currentBookIndex])}
+                    onClick={() => window.open(authorData.books[currentBookIndex].amazonLink, "_blank")}
                   >
                     {/* Book Shadow */}
                     <div className="absolute -bottom-4 left-4 right-4 h-4 bg-black/20 blur-xl rounded-[50%] group-hover:bg-orange-500/20 transition-colors" />
@@ -112,7 +112,7 @@ export const AuthorSection = () => {
                       
                       {/* Hover Overlay */}
                       <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center">
-                        <span className="font-bold text-lg mb-2">View Details</span>
+                        <span className="font-bold text-lg mb-2">Buy on Amazon</span>
                         <span className="text-sm text-gray-300">{authorData.books[currentBookIndex].price}</span>
                       </div>
                     </div>

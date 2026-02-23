@@ -10,10 +10,34 @@ interface SidebarProps {
 }
 
 const books = [
-  { id: 1, title: "The Digital Horizon", price: "$24.99", image: "https://picsum.photos/seed/book1/150/200" },
-  { id: 2, title: "Code of Silence", price: "$19.99", image: "https://picsum.photos/seed/book2/150/200" },
-  { id: 3, title: "Future Proof", price: "$22.50", image: "https://picsum.photos/seed/book3/150/200" },
-  { id: 4, title: "Algorithm's Heart", price: "$21.00", image: "https://picsum.photos/seed/book4/150/200" },
+  { 
+    id: 1, 
+    title: "The Transcendent Entrepreneur", 
+    price: "$19.99", 
+    image: "https://new.nicholaskquest.com/wp-content/uploads/2025/07/51vdD0GDNL._SY385_.jpg",
+    amazonLink: "https://www.amazon.com/s?k=Nicholas+Katushabe+entrepreneur"
+  },
+  { 
+    id: 2, 
+    title: "Peak Performance Strategies", 
+    price: "$24.99", 
+    image: "https://new.nicholaskquest.com/wp-content/uploads/2025/07/61NFrVssk1L._SY385_.jpg",
+    amazonLink: "https://www.amazon.com/s?k=Nicholas+Katushabe+performance"
+  },
+  { 
+    id: 3, 
+    title: "Business Transformation", 
+    price: "$22.50", 
+    image: "https://new.nicholaskquest.com/wp-content/uploads/2025/07/61jYY73cb4L._SY385_.jpg",
+    amazonLink: "https://www.amazon.com/s?k=Nicholas+Katushabe+business"
+  },
+  { 
+    id: 4, 
+    title: "Leadership Excellence", 
+    price: "$21.00", 
+    image: "https://new.nicholaskquest.com/wp-content/uploads/2025/07/619m-Hd2tL._SY385_.jpg",
+    amazonLink: "https://www.amazon.com/s?k=Nicholas+Katushabe+leadership"
+  },
 ];
 
 export const Sidebar = ({ topStories, setPage }: SidebarProps) => {
@@ -99,7 +123,9 @@ export const Sidebar = ({ topStories, setPage }: SidebarProps) => {
           {books.map((book) => (
             <a
               key={book.id}
-              href="#"
+              href={book.amazonLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group block relative rounded-lg overflow-hidden border border-gray-100 hover:border-orange-300 transition-all hover:shadow-md"
             >
               <div className="aspect-[2/3] overflow-hidden bg-gray-100">
@@ -111,8 +137,7 @@ export const Sidebar = ({ topStories, setPage }: SidebarProps) => {
               </div>
               <div className="p-2 bg-white">
                 <h4 className="text-[10px] font-bold text-gray-900 leading-tight mb-1 truncate">{book.title}</h4>
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-black text-orange-600">{book.price}</span>
+                <div className="flex items-center justify-end">
                   <Star className="w-2.5 h-2.5 text-yellow-400 fill-current" />
                 </div>
               </div>
@@ -150,18 +175,23 @@ export const Sidebar = ({ topStories, setPage }: SidebarProps) => {
       </motion.div>
 
       {/* Ad Slot 1 - Video */}
-      <div className="group">
+      <div className="group cursor-pointer" onClick={() => window.open(ads[0].link, '_blank')}>
         <div className="relative rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm ring-1 ring-black/5 hover:shadow-lg transition-shadow duration-300">
           <video
-            className="w-full h-48 object-cover"
-            src="/ads/nbk.mp4"
+            className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+            src={ads[0].video || "/ads/nbk.mp4"}
             autoPlay
             loop
             muted
             playsInline
-            poster="/ads/nbk_premier_ad.png"
+            poster={ads[0].image}
+            preload="metadata"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
           <div className="absolute top-2 left-2 bg-gray-900/80 text-white text-[10px] px-2 py-0.5 rounded-full backdrop-blur-sm tracking-wider uppercase">Ad</div>
+          <div className="absolute bottom-2 left-2 right-2 text-white text-xs font-bold drop-shadow-sm">
+            {ads[0].title}
+          </div>
         </div>
       </div>
 
@@ -196,18 +226,6 @@ export const Sidebar = ({ topStories, setPage }: SidebarProps) => {
               </div>
             </motion.a>
           ))}
-        </div>
-      </div>
-
-      {/* Ad Slot 2 */}
-      <div className="cursor-pointer group" onClick={() => window.open(ads[2].link, '_blank')}>
-        <div className="relative rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm ring-1 ring-black/5 hover:shadow-lg transition-shadow duration-300">
-          <img src={ads[2].image} alt="Ad" className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-          <div className="absolute top-2 left-2 bg-gray-900/80 text-white text-[10px] px-2 py-0.5 rounded-full backdrop-blur-sm tracking-wider uppercase">Ad</div>
-          <div className="absolute bottom-2 left-2 right-2 text-white text-xs font-bold drop-shadow-sm">
-            {ads[2].title}
-          </div>
         </div>
       </div>
     </aside>
