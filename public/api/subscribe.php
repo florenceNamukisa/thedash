@@ -37,36 +37,12 @@ if (!is_array($subscribers)) {
   $subscribers = [];
 }
 
-if (!in_array($email, $subscribers, true)) {
-  $subscribers[] = $email;
-  file_put_contents($subscribersFile, json_encode($subscribers, JSON_PRETTY_PRINT), LOCK_EX);
-}
-
-$host = isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : "thedashafrica.com";
-$host = preg_replace("/^www\./", "", $host);
-$fromEmail = "updates@" . $host;
-$fromName = "TheDashAfrica";
-
-$subject = "Welcome to TheDashAfrica blogs";
-$message = "Thank you for subscribing to TheDashAfrica blogs.\n\n";
-$message .= "We will notify you whenever a new article is uploaded.\n\n";
-$message .= "If you did not request this, you can ignore this email.";
-
-$headers = [];
-$headers[] = "From: " . $fromName . " <" . $fromEmail . ">";
-$headers[] = "Reply-To: " . $fromEmail;
-$headers[] = "Content-Type: text/plain; charset=UTF-8";
-$headersString = implode("\r\n", $headers);
-
-$sent = @mail($email, $subject, $message, $headersString);
-
-if (!$sent) {
-  http_response_code(500);
-  echo json_encode(["ok" => false, "error" => "Email send failed"]);
+if (in_array($email, $subscribers, true)) {
+  echo json_encode(["ok" => true, "message" => "You're already subscribed!"]);
   exit;
 }
 
-echo json_encode([
-  "ok" => true,
-  "message" => "Thank you for subscribing to TheDashAfrica blogs."
-]);
+$subscribers[] = $email;
+file_put_contents($subscribersFile, json_encode($subscribers, JSON_PRETTY_PRINT), LOCK_EX);
+
+echo json_encode(["ok" => true, "message" => "Successfully subscribed!"]);

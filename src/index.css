@@ -1,18 +1,88 @@
 @import "tailwindcss";
 
 @theme {
+  /* Brand Colors - Based on The Dash Africa Logo */
   --color-brand-blue: #1B6CB4;
+  --color-brand-blue-light: #2563EB;
+  --color-brand-blue-dark: #1E40AF;
   --color-brand-red: #BB3421;
-  --color-brand-black: #000000;
+  --color-brand-red-light: #DC2626;
+  --color-brand-black: #1F2937;
+  --color-brand-gray: #6B7280;
+  --color-brand-gray-light: #9CA3AF;
+  --color-brand-gray-50: #F9FAFB;
+  --color-brand-gray-100: #F3F4F6;
+  --color-brand-gray-200: #E5E7EB;
+  --color-brand-gray-800: #1F2937;
+  
+  /* Accent Colors */
+  --color-brand-orange: #F97316;
+  --color-brand-green: #10B981;
+  --color-brand-purple: #8B5CF6;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
 @layer utilities {
   .animate-marquee {
     animation: marquee 30s linear infinite;
   }
+  
+  /* Smooth scroll behavior */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+  
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Gradient text */
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, var(--color-brand-blue), var(--color-brand-red));
+  }
 }
 
 @layer base {
+  /* Base styles */
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-brand-gray-800);
+    background-color: #FFFFFF;
+  }
+  
+  /* Headings with improved typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+  
+  /* Links with better styling */
   a,
   button {
     cursor: pointer;
@@ -22,17 +92,44 @@
     text-decoration-thickness: 2px;
     text-underline-offset: 3px;
     text-decoration-color: transparent;
-    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    transition: all 0.2s ease;
   }
 
   a:hover {
     text-decoration-color: currentColor;
+    color: var(--color-brand-blue);
   }
 
   a:focus-visible,
   button:focus-visible {
     outline: 2px solid var(--color-brand-red);
     outline-offset: 2px;
+    border-radius: var(--radius-md);
+  }
+  
+  /* Selection color */
+  ::selection {
+    background-color: var(--color-brand-blue);
+    color: white;
+  }
+  
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--color-brand-gray-100);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-brand-gray-light);
+    border-radius: var(--radius-full);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-brand-gray);
   }
 }
 
@@ -46,11 +143,144 @@
   }
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
+/* Article body uses a readable serif for long-form reading */
+.article-body {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.125rem;
+  line-height: 1.9;
+}
+
+.article-body p {
+  color: #374151;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+
+.article-body h2,
+.article-body h3 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-brand-gray-800);
+}
+
+.article-body h2 {
+  font-size: 1.75rem;
+}
+
+.article-body h3 {
+  font-size: 1.375rem;
+}
+
+.article-body blockquote {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-left: 4px solid var(--color-brand-blue);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--color-brand-gray);
+}
+
+.article-body ul,
+.article-body ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.article-body li {
+  margin-bottom: 0.5rem;
+}
+
+.article-body ul li span {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 html {
-  font-size: 110%;
+  font-size: 100%;
+}
+
+/* Custom utility classes for consistency */
+.section-spacing {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.container-max {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.card-shadow {
+  box-shadow: var(--shadow-md);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-shadow:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: var(--color-brand-blue);
+  color: white;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-brand-blue-dark);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: var(--color-brand-red);
+  color: white;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-brand-red-light);
+  transform: translateY(-1px);
+}
+
+/* Image styling */
+.img-cover {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Category badge styling */
+.category-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Animation utilities */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

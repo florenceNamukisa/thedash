@@ -1,6 +1,6 @@
 import { Post } from "../types";
 import { formatDate } from "../utils/formatDate";
-import { TrendingUp, Info, Briefcase, Mail, ChevronRight, Facebook, Twitter, Instagram, BookOpen, Star, ShoppingCart, Home } from "lucide-react";
+import { TrendingUp, ChevronRight, Facebook, Twitter, Instagram, BookOpen, Star, ShoppingCart } from "lucide-react";
 import { motion } from "framer-motion";
 import { ads } from "../data/newsData";
 
@@ -41,37 +41,8 @@ const books = [
 ];
 
 export const Sidebar = ({ topStories, setPage }: SidebarProps) => {
-  const menuItems = [
-    { id: "home", label: "Back Home", icon: Home },
-    { id: "about", label: "About Us", icon: Info },
-    { id: "careers", label: "Careers", icon: Briefcase },
-    { id: "contact", label: "Contact", icon: Mail },
-  ];
-
   return (
     <aside className="space-y-8">
-      {/* Navigation Links */}
-      <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm sticky top-16 z-20 md:static md:top-auto md:z-auto">
-        <h3 className="font-bold text-sm uppercase tracking-wide text-gray-500 mb-4 px-1">
-          About Us
-        </h3>
-        <div className="space-y-1">
-          {menuItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => setPage(item.id)}
-              className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold text-gray-700 hover:bg-orange-50 hover:text-orange-700 transition-all group"
-            >
-              <div className="flex items-center gap-3">
-                <item.icon className="w-4 h-4 text-gray-400 group-hover:text-orange-500 transition-colors" />
-                {item.label}
-              </div>
-              <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity translate-x-[-10px] group-hover:translate-x-0 text-orange-500" />
-            </button>
-          ))}
-        </div>
-      </div>
-
       {/* Nicholas K. Quest Sponsored Ad */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}

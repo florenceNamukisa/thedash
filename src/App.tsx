@@ -353,7 +353,7 @@ function App() {
       />
       <BillboardAd />
       <BreakingTicker onHeadlineClick={setSelectedCategory} />
-      <CategoryNavbar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+      <CategoryNavbar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} setPage={handleSetPage} />
 
       <main className="flex-grow max-w-7xl mx-auto w-full px-4 py-6">
         <AnimatePresence mode="wait">

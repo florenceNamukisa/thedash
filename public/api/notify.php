@@ -1,5 +1,13 @@
 <?php
 header("Content-Type: application/json");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+
+if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
+  http_response_code(200);
+  exit;
+}
 
 if ($_SERVER["REQUEST_METHOD"] !== "GET" && $_SERVER["REQUEST_METHOD"] !== "POST") {
   http_response_code(405);
@@ -132,17 +140,117 @@ $message .= "Thank you for reading TheDashAfrica.";
 $headers = [];
 $headers[] = "From: " . $fromName . " <" . $fromEmail . ">";
 $headers[] = "Reply-To: " . $fromEmail;
+$headers[] = "MIME-Version: 1.0";
 $headers[] = "Content-Type: text/plain; charset=UTF-8";
 $headersString = implode("\r\n", $headers);
 
+// Load SMTP configuration if available
+$smtpConfig = [];
+$configFile = __DIR__ . "/../../smtp-config.json";
+if (file_exists($configFile)) {
+  $smtpConfig = json_decode(file_get_contents($configFile), true);
+}
+
 $sentCount = 0;
+$failedCount = 0;
+
 foreach ($subscribers as $email) {
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     continue;
   }
-  if (@mail($email, $subject, $message, $headersString)) {
-    $sentCount++;
+  
+  $sent = false;
+  
+  if (!empty($smtpConfig) && isset($smtpConfig["host"])) {
+    // Use SMTP
+    $sent = sendEmailSMTP($email, $subject, $message, $fromEmail, $fromName, $smtpConfig);
+  } else {
+    // Fall back to PHP mail()
+    $sent = @mail($email, $subject, $message, $headersString);
   }
+  
+  if ($sent) {
+    $sentCount++;
+  } else {
+    $failedCount++;
+  }
+}
+
+// SMTP sending function
+function sendEmailSMTP($to, $subject, $message, $fromEmail, $fromName, $config) {
+  $smtpHost = $config["host"];
+  $smtpPort = isset($config["port"]) ? $config["port"] : 587;
+  $smtpUsername = $config["username"];
+  $smtpPassword = $config["password"];
+  $useTLS = isset($config["use_tls"]) ? $config["use_tls"] : true;
+  
+  $socket = @fsockopen(
+    ($useTLS ? "tls://" : "") . $smtpHost,
+    $smtpPort,
+    $errno,
+    $errstr,
+    30
+  );
+  
+  if (!$socket) {
+    return false;
+  }
+  
+  $response = fgets($socket, 515);
+  if (substr($response, 0, 3) !== "220") {
+    fclose($socket);
+    return false;
+  }
+  
+  // HELO
+  fputs($socket, "HELO " . $smtpHost . "\r\n");
+  $response = fgets($socket, 515);
+  
+  // AUTH LOGIN
+  fputs($socket, "AUTH LOGIN\r\n");
+  $response = fgets($socket, 515);
+  
+  fputs($socket, base64_encode($smtpUsername) . "\r\n");
+  $response = fgets($socket, 515);
+  
+  fputs($socket, base64_encode($smtpPassword) . "\r\n");
+  $response = fgets($socket, 515);
+  
+  if (substr($response, 0, 3) !== "235") {
+    fclose($socket);
+    return false;
+  }
+  
+  // MAIL FROM
+  fputs($socket, "MAIL FROM:<" . $fromEmail . ">\r\n");
+  $response = fgets($socket, 515);
+  
+  // RCPT TO
+  fputs($socket, "RCPT TO:<" . $to . ">\r\n");
+  $response = fgets($socket, 515);
+  
+  // DATA
+  fputs($socket, "DATA\r\n");
+  $response = fgets($socket, 515);
+  
+  $emailContent = "From: " . $fromName . " <" . $fromEmail . ">\r\n";
+  $emailContent .= "To: " . $to . "\r\n";
+  $emailContent .= "Subject: " . $subject . "\r\n";
+  $emailContent .= "MIME-Version: 1.0\r\n";
+  $emailContent .= "Content-Type: text/plain; charset=UTF-8\r\n";
+  $emailContent .= "Reply-To: " . $fromEmail . "\r\n";
+  $emailContent .= "\r\n";
+  $emailContent .= $message . "\r\n";
+  $emailContent .= ".\r\n";
+  
+  fputs($socket, $emailContent);
+  $response = fgets($socket, 515);
+  
+  // QUIT
+  fputs($socket, "QUIT\r\n");
+  fclose($socket);
+  
+  return substr($response, 0, 3) === "250";
 }
 
 $state["last_guid"] = $newItems[0]["guid"];
