@@ -11,6 +11,8 @@ interface NavbarProps {
   setIsMobileMenuOpen: (open: boolean) => void;
   selectedCategory: string;
   setSelectedCategory: (cat: string) => void;
+  searchQuery: string;
+  setSearchQuery: (q: string) => void;
 }
 
 export const Navbar = ({
@@ -19,10 +21,11 @@ export const Navbar = ({
   isMobileMenuOpen,
   setIsMobileMenuOpen,
   selectedCategory,
-  setSelectedCategory
+  setSelectedCategory,
+  searchQuery,
+  setSearchQuery
 }: NavbarProps) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -39,6 +42,7 @@ export const Navbar = ({
 
   const handleCategorySelect = (cat: string) => {
     setSelectedCategory(cat);
+    setSearchQuery("");
     setPage("home");
     setIsDropdownOpen(false);
     setIsMobileMenuOpen(false);
@@ -47,6 +51,7 @@ export const Navbar = ({
   const handleHomeClick = () => {
     setPage("home");
     setSelectedCategory("All"); // Reset to All
+    setSearchQuery("");
     setIsMobileMenuOpen(false);
   };
 
@@ -54,6 +59,15 @@ export const Navbar = ({
     setPage("videos");
     setIsDropdownOpen(false);
     setIsMobileMenuOpen(false);
+  };
+
+  const handleAdvertiseClick = () => {
+    setPage("contact");
+    setSelectedCategory("All");
+    setSearchQuery("");
+    setIsDropdownOpen(false);
+    setIsMobileMenuOpen(false);
+    setIsSearchOpen(false);
   };
 
   return (
@@ -103,7 +117,7 @@ export const Navbar = ({
               : "text-gray-600 hover:bg-gray-50 hover:text-brand-blue"
               }`}
           >
-            Videos
+            Podcasts
           </button>
 
           {/* Main Categories */}
@@ -154,6 +168,17 @@ export const Navbar = ({
               </div>
             )}
           </div>
+
+          {/* Advertise */}
+          <button
+            onClick={handleAdvertiseClick}
+            className={`px-4 py-2 text-sm font-bold rounded-md transition-all ${currentPage === "contact"
+              ? "bg-blue-50 text-brand-blue"
+              : "text-gray-600 hover:bg-gray-50 hover:text-brand-blue"
+              }`}
+          >
+            Advertise
+          </button>
         </nav>
 
         {/* Right: Actions */}
@@ -166,7 +191,11 @@ export const Navbar = ({
                   placeholder="Search news..."
                   className="w-48 md:w-64 h-9"
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    setPage("home");
+                    setSelectedCategory("All");
+                  }}
                   autoFocus
                 />
               </div>
@@ -174,7 +203,14 @@ export const Navbar = ({
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => setIsSearchOpen(!isSearchOpen)}
+              onClick={() => {
+                setIsSearchOpen(!isSearchOpen);
+                setPage("home");
+                setSelectedCategory("All");
+                if (!isSearchOpen) {
+                  setSearchQuery("");
+                }
+              }}
               className={isSearchOpen ? "text-brand-blue" : ""}
             >
               {isSearchOpen ? <X className="w-5 h-5" /> : <Search className="w-5 h-5" />}
@@ -215,9 +251,23 @@ export const Navbar = ({
           >
             <div className="flex items-center gap-2">
               <span className="w-4 h-4 inline-flex items-center justify-center">▶</span>
-              Videos
+              Podcasts
             </div>
             {currentPage === "videos" && <div className="w-1.5 h-1.5 bg-brand-blue rounded-full" />}
+          </button>
+
+          <button
+            onClick={handleAdvertiseClick}
+            className={`w-full text-left px-4 py-3 text-sm font-bold rounded-md flex items-center justify-between ${currentPage === "advertise"
+              ? "bg-blue-50 text-brand-blue"
+              : "text-gray-600 hover:bg-gray-50"
+              }`}
+          >
+            <div className="flex items-center gap-2">
+              <span className="w-4 h-4 inline-flex items-center justify-center">💼</span>
+              Advertise
+            </div>
+            {currentPage === "advertise" && <div className="w-1.5 h-1.5 bg-brand-blue rounded-full" />}
           </button>
 
           {/* Mobile Categories List */}

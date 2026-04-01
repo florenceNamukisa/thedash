@@ -11,16 +11,16 @@ import { NewsCard } from "./components/NewsCard";
 import { Sidebar } from "./components/Sidebar";
 import { InFeedAd } from "./components/InFeedAd";
 import { BillboardAd } from "./components/BillboardAd";
-import { ShortsSection } from "./components/ShortsSection";
+
 import { NewsDetail } from "./components/NewsDetail";
 import { About } from "./pages/About";
 import { Careers } from "./pages/Careers";
 import { Contact } from "./pages/Contact";
 import { Subscription } from "./pages/Subscription";
 import { Videos } from "./pages/Videos";
+import { Advertise } from "./pages/Advertise";
 import { allPosts } from "./data/posts";
 import { latestArticles, localArticles, popularArticles, regionalArticles } from "./data/featuredArticles";
-import { videos } from "./data/newsData";
 import { formatDate } from "./utils/formatDate";
 import { Post } from "./types";
 
@@ -33,30 +33,81 @@ const pageVariants = {
   exit: { opacity: 0, y: -10, transition: { duration: 0.3, ease: "easeIn" } }
 };
 
+
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedPost, setSelectedPost] = useState<Post | null>(null);
   const [visibleCount, setVisibleCount] = useState(POSTS_PER_PAGE);
   const [loading, setLoading] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [showSubscribeModal, setShowSubscribeModal] = useState(false);
   const loadMoreRef = useRef<HTMLDivElement>(null);
 
   const handleSetPage = (page: string) => {
     setSelectedPost(null);
-    setCurrentPage(page);
+    if (page === "subscribe") {
+      setShowSubscribeModal(true);
+      setCurrentPage("home");
+    } else {
+      setCurrentPage(page);
+    }
   };
 
   // Filter posts
-  const filteredPosts = selectedCategory === "All"
+  let filteredPosts = selectedCategory === "All"
     ? allPosts
     : allPosts.filter(post => post.category === selectedCategory);
+
+  if (searchQuery.trim()) {
+    const query = searchQuery.toLowerCase();
+    filteredPosts = filteredPosts.filter((post) =>
+      post.title.toLowerCase().includes(query) ||
+      post.excerpt.toLowerCase().includes(query) ||
+      post.content.toLowerCase().includes(query) ||
+      post.category.toLowerCase().includes(query)
+    );
+  }
 
   // Ensure we have enough posts for the slider (take top 5)
   const sliderPosts = filteredPosts.slice(0, 5);
   const feedPosts = filteredPosts.slice(5, visibleCount); // Start feed after slider posts
   const topStories = allPosts.filter(p => p.id !== sliderPosts[0]?.id).slice(0, 10);
+
+  // Latest home section (force new content immediately after carousel)
+  const preferredLatestIds = [
+    "uganda-investment-2024",
+    "latest-rwanda-imf-article-iv-2025",
+    "regional-rwanda-economic-update-2025",
+    "africa-energy-revolution-2024",
+    "uae-industrial-strategy-2024",
+    "latest-kenya-economic-update-2025",
+  ];
+
+  const latestHomeArticles = preferredLatestIds
+    .map((id) =>
+      allPosts.find((p) => p.id === id) ||
+      latestArticles.find((p) => p.id === id) ||
+      regionalArticles.find((p) => p.id === id)
+    )
+    .filter((p): p is Post => Boolean(p));
+
+  // Ensure at least 5 items in latest home block
+  if (latestHomeArticles.length < 5) {
+    allPosts.slice(0, 5).forEach((p) => {
+      if (!latestHomeArticles.some((lp) => lp.id === p.id)) {
+        latestHomeArticles.push(p);
+      }
+    });
+  }
+
+  // Regional sidebar should connect to actual full post records when available.
+  const regionalSidebarArticles = regionalArticles.map((regionPost) => {
+    const matched = allPosts.find((p) => p.id === regionPost.id);
+    return matched ? matched : regionPost;
+  });
 
   // Infinite Scroll Logic
   useEffect(() => {
@@ -145,7 +196,7 @@ function App() {
 
       {/* Right Column */}
       <div className="lg:col-span-3 order-last lg:order-none space-y-6">
-        <Sidebar topStories={topStories} setPage={handleSetPage} />
+        <Sidebar topStories={topStories} setPage={handleSetPage} onSelectPost={setSelectedPost} />
 
         <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
           <h3 className="text-sm font-bold uppercase tracking-wide text-gray-500 mb-4">
@@ -172,7 +223,7 @@ function App() {
             Regional Articles
           </h3>
           <div className="space-y-3">
-            {regionalArticles.map((post) => (
+            {regionalSidebarArticles.map((post) => (
               <button
                 key={post.id}
                 onClick={() => setSelectedPost(post)}
@@ -207,9 +258,9 @@ function App() {
     switch (currentPage) {
       case "about":
         return (
-          <PageLayout>
+          <div className="bg-red-50 min-h-screen -mx-4 -my-6 px-4 py-6">
             <About onBack={() => handleSetPage("home")} />
-          </PageLayout>
+          </div>
         );
       case "careers":
         return (
@@ -217,22 +268,22 @@ function App() {
             <Careers />
           </PageLayout>
         );
-      case "contact":
+      case "advertise":
         return (
           <PageLayout>
-            <Contact />
+            <Advertise />
           </PageLayout>
         );
-      case "subscribe":
+      case "contact":
         return (
-          <PageLayout>
-            <Subscription />
-          </PageLayout>
+          <div className="bg-blue-50 min-h-screen -mx-4 -my-6 px-4 py-6">
+            <Contact />
+          </div>
         );
       case "videos":
         return (
           <PageLayout>
-            <Videos allPosts={allPosts} onSelectPost={setSelectedPost} />
+            <Videos />
           </PageLayout>
         );
       default:
@@ -257,7 +308,7 @@ function App() {
                   <span className="text-xs font-semibold text-gray-400">Latest coverage</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {latestArticles.map((post) => (
+                  {(latestHomeArticles.length > 0 ? latestHomeArticles : latestArticles).map((post) => (
                     <button
                       key={post.id}
                       onClick={() => setSelectedPost(post)}
@@ -350,10 +401,20 @@ function App() {
         setIsMobileMenuOpen={setIsMobileMenuOpen}
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
       />
       <BillboardAd />
-      <BreakingTicker onHeadlineClick={setSelectedCategory} />
+      <BreakingTicker onHeadlineClick={setSelectedPost} />
       <CategoryNavbar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} setPage={handleSetPage} />
+
+      {showSubscribeModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+          <div className="max-h-[85vh] w-full">
+            <Subscription inModal onClose={() => setShowSubscribeModal(false)} />
+          </div>
+        </div>
+      )}
 
       <main className="flex-grow max-w-7xl mx-auto w-full px-4 py-6">
         <AnimatePresence mode="wait">
@@ -361,16 +422,12 @@ function App() {
         </AnimatePresence>
       </main>
 
-      {/* Full Width Sections */}
-      <ShortsSection />
+
 
       <footer className="bg-black text-white py-12 mt-12 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-blue via-brand-red to-brand-blue" />
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-orange-400 to-blue-400" />
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
           <div className="md:col-span-2">
-            <div className="mb-4">
-              <img src="/logo.png" alt="The Dash Africa" className="h-12 w-auto object-contain brightness-0 invert" />
-            </div>
             <p className="text-gray-400 text-sm max-w-sm leading-relaxed">
               Delivering the most important stories from around the world. Trusted, accurate, and independent journalism for the digital age.
             </p>
@@ -383,7 +440,7 @@ function App() {
                 { label: "Careers", page: "careers" },
                 { label: "Contact", page: "contact" },
                 { label: "Subscribe", page: "subscribe" },
-                { label: "Videos", page: "videos" },
+                { label: "Podcasts", page: "videos" },
               ].map((item) => (
                 <li key={item.label}>
                   <button
@@ -400,7 +457,7 @@ function App() {
             </ul>
           </div>
           <div>
-            <h4 className="font-bold mb-4 text-brand-blue uppercase tracking-widest text-xs">Sections</h4>
+            <h4 className="font-bold mb-4 text-blue-600 uppercase tracking-widest text-xs">Sections</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               {["World", "Politics", "Business", "Technology", "Sports"].map(item => (
                 <li key={item}><a href="#" className="hover:text-white transition-colors hover:translate-x-1 inline-block duration-200">{item}</a></li>
@@ -411,7 +468,7 @@ function App() {
             <h4 className="font-bold mb-4 text-brand-blue uppercase tracking-widest text-xs">Follow Us</h4>
             <div className="flex gap-4">
               {["Twitter", "Facebook", "Instagram", "LinkedIn"].map(social => (
-                <a key={social} href="#" className="text-gray-400 hover:text-brand-red text-sm transition-colors hover:scale-110 duration-200 transform">
+                <a key={social} href="#" className="text-gray-500 hover:text-blue-600 text-sm transition-colors hover:scale-110 duration-200 transform">
                   {social}
                 </a>
               ))}
@@ -421,15 +478,17 @@ function App() {
                 handleSetPage("home");
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="self-start inline-flex items-center gap-2 rounded-full border border-gray-700 px-4 py-2 text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-white hover:border-white transition-colors"
+              className="self-start inline-flex items-center gap-2 rounded-full border border-gray-300 px-4 py-2 text-xs font-bold uppercase tracking-wider text-gray-600 hover:text-gray-900 hover:border-gray-500 transition-colors"
             >
               Back to Top
               <ArrowUp className="w-4 h-4" />
             </button>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-          © 2024 The Dash Africa. All rights reserved.
+        <div className="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <span className="text-gray-600 text-sm">© 2024 The Dash Africa. All rights reserved.</span>
+          </div>
         </div>
       </footer>
       {showBackToTop && (

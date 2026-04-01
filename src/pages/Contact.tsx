@@ -76,7 +76,7 @@ export const Contact = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto py-8">
+    <div className="max-w-6xl mx-auto py-8">
       <h1 className="text-4xl font-black mb-8">Get in Touch</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -89,7 +89,7 @@ export const Contact = () => {
               </div>
               <div>
                 <h3 className="font-bold text-gray-900">Email</h3>
-                <p className="text-gray-600">legacyafrica.uganda@gmail.com</p>
+                <p className="text-gray-600">buzinirogroup@gmail.com</p>
               </div>
             </div>
             
@@ -99,7 +99,7 @@ export const Contact = () => {
               </div>
               <div>
                 <h3 className="font-bold text-gray-900">Phone</h3>
-                <p className="text-gray-600">+256 704 597816</p>
+                <p className="text-gray-600">+256 793 192760</p>
               </div>
             </div>
 

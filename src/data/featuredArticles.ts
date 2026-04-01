@@ -8,7 +8,7 @@ export const latestArticles: Post[] = [
     category: "Society & Lifestyle",
     author: "Nicholas K. Quest",
     date: new Date("2020-04-17"),
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=450&fit=crop",
+    image: "https://media.licdn.com/dms/image/v2/D4D22AQG2kuNKXmXn3w/feedshare-shrink_800/B4DZy8ijPCHcAk-/0/1772689700235?e=2147483647&v=beta&t=DmMjWknm42Ieh-n1ZiR6zNi1SeH-V7t_jIZeuuzAxlM",
     content: `> "Ask and it will be given to you; seek and you will find; knock and the door will be opened to you." — Matthew 7:7
 
 This is not merely a spiritual instruction. It is one of the oldest and most consistently validated principles of human achievement — that the act of seeking, of directing conscious intention toward a desired outcome, is itself a force that accelerates the probability of attaining it. The person who wants something and actively pursues it inhabits a fundamentally different reality from the person who simply waits and hopes.
@@ -50,7 +50,7 @@ What you want, wants you — to seek for it. The seeking is the mechanism. Begin
     category: "Society & Lifestyle",
     author: "Nicholas K. Quest",
     date: new Date("2020-05-20"),
-    image: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800&h=450&fit=crop",
+    image: "https://images.squarespace-cdn.com/content/v1/68e506702a4bd874e42771c4/57d53c90-4bdb-4fb2-be5d-fddb0dc180b0/2024_ULO-LR-2693.jpg",
     content: `Show me a person who has never faced a serious struggle and I will show you a person who has never truly lived — and almost certainly, never truly grown. This is not a pessimistic observation. It is one of the most reliably confirmed truths in the entire history of human development. Challenge is not an obstacle to the good life. It is a prerequisite for it.
 
 The ancient mariners understood this intuitively. A sailor who has only ever navigated calm, predictable waters has not developed the instincts, reflexes, and judgment that the sea will eventually demand. The crisis will come — it always does — and the untested sailor will be found wanting in the moment that counts. The sailor who has been tested knows how to read weather, how to adjust sail, how to keep the crew composed, and how to find the harbour even when the stars are obscured. Calm seas are pleasant. Storms produce competence.
@@ -86,7 +86,7 @@ Calm seas are a gift. But they are not the training ground. Go to where the wate
     category: "Business",
     author: "Nicholas K. Quest",
     date: new Date("2021-01-20"),
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=450&fit=crop",
+    image: "https://bunyorofinancebank.com/wp-content/uploads/2025/08/Young-Entrepreneurs-Shaping-Ugandas-Financial-Future.jpg",
     content: `Every generation produces a small group of people who succeed young — who build significant things in their twenties and early thirties while most of their peers are still trying to figure out the framework. These are not mythological figures. They are identifiable, their methods are observable, and their core operating principles are learnable by anyone willing to adopt them.
 
 The first and most important of those principles is this: you are the core ingredient to your own success. Not your network, not your capital, not your circumstances, not the economic environment. You. Your thinking, your decisions, your habits, and your willingness to invest relentlessly in the development of your own capacity — these are what determine what you build and how fast you build it.
@@ -126,7 +126,7 @@ Succeed young. Strategize today. The window to build the foundation that everyth
     category: "Legal & Consulting",
     author: "Nicholas K. Quest",
     date: new Date("2021-03-15"),
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=450&fit=crop",
+    image: "https://www.monitor.co.ug/resource/blob/4245266/72b27e7a9fc39c74d2e9ec1b62d0378b/buildingpermit04pix-data.jpg",
     content: `As Uganda continues to attract international investment and skilled professionals, many organisations are employing foreign nationals to fill specialised roles across sectors such as technology, education, manufacturing, and development work. However, before any foreign national can legally work in the country, they must obtain a valid work permit.
 
 Work permits in Uganda are issued by the Directorate of Citizenship and Immigration Control under the Ministry of Internal Affairs. These permits allow foreign professionals and investors to legally live and work in Uganda for a specified period while ensuring compliance with immigration laws.
@@ -164,7 +164,7 @@ Obtaining a work permit is an essential step for any foreign national seeking em
     author: "Nicholas K. Quest",
     date: new Date("2025-11-24"),
     image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH6Ot8Pm6m5CrNQpj2xiIU2GXDG8kVFb2hQA&s",
     content:
       `Kenya's economic story in 2025 is one of resilience tested by fiscal pressure. The country's output growth is gathering momentum, supported by a rebound in construction activity, easing credit conditions following the Bank of Kenya's rate-cutting cycle, and improving household consumption. Inflation remains within the central bank's target range, and the Kenyan shilling has stabilised after several years of significant depreciation pressure. The fundamentals of the economy are broadly positive.
 
@@ -205,7 +205,7 @@ Kenya remains one of East Africa's most important and dynamic economies. Its abi
     author: "Nicholas K. Quest",
     date: new Date("2025-12-04"),
     image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80",
+      "/images/rwanda.jpg",
     content:
       `**Overview**
 The IMF's 2025 Article IV highlights Rwanda's continued resilience, noting robust services and construction activity and inflation within the target band. The Fund stresses that rebuilding fiscal and external buffers is now the priority as import demand and public investment have widened external balances.
@@ -261,7 +261,7 @@ Rwanda's story remains one of the most positive in Africa. But the next phase of
     author: "Nicholas K. Quest",
     date: new Date("2026-01-23"),
     image:
-      "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=900&q=80",
+      "/images/image.png",
     content:
       `Uganda's macroeconomic performance in 2025 demonstrates an economy that has successfully navigated the post-pandemic recovery and is now positioning for its most significant transformation in decades. The International Monetary Fund's 2025 Post-Financing Assessment confirms what many observers of the Ugandan economy have noted: growth has been robust, inflation has remained contained, and foreign exchange reserves have improved meaningfully — all of which provide a solid foundation for the transition to oil-based economic growth that is now approaching.
 
@@ -308,7 +308,7 @@ Uganda's macro stability is genuine and should not be understated. But the count
     author: "Nicholas K. Quest",
     date: new Date("2025-06-19"),
     image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
+      "https://unctad.org/sites/default/files/2025-06/20250619_newspic_shutterstock_1729009555_1200x675.jpg",
     content:
       `The year 2024 marked a turning point for foreign direct investment in Africa. After years of relative stagnation and declining investor interest following the global pandemic, international capital flows to the continent surged to a record $97 billion — a 75% increase that repositioned Africa as a significant destination for global investment capital and demonstrated that the continent's underlying growth potential remains attractive to international investors when conditions are right.
 
@@ -550,7 +550,7 @@ export const localArticles: Post[] = [
     author: "Nicholas K. Quest",
     date: new Date("2026-01-23"),
     image:
-      "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=900&q=80",
+      "https://softpower.ug/wp-content/uploads/2025/10/Oil-worker_1600x900-qj0xozxsdr4uxkjl13myossot2qo7uidudh0xsebs8.webp",
     content:
       `**Overview**
 Uganda's IMF Post-Financing Assessment notes robust post-pandemic growth and rising reserves, supported by strong coffee exports. The IMF stresses continued fiscal adjustment and flexible exchange rates to safeguard stability, with oil project timing remaining the main uncertainty.
@@ -578,7 +578,7 @@ Policy signals on fiscal consolidation, export trends, and the pipeline schedule
     author: "Nicholas K. Quest",
     date: new Date("2025-09-30"),
     image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
+      "https://apanews.net/wp-content/uploads/2024/12/World-Bank-new.webp",
     content:
       `**Overview**
 The World Bank reports Uganda's growth accelerated to 6.8% in the nine months from July 2024 to March 2025, driven by agriculture, manufacturing, construction, and consumption. Inflation remains below target, helped by stable food supplies and energy prices.
@@ -688,57 +688,233 @@ export const regionalArticles: Post[] = [
     id: "regional-rwanda-economic-update-2025",
     title: "Rwanda posts 8.9% growth in 2024 as services lead",
     excerpt:
-      "The World Bank says Rwanda expanded 8.9% in 2024, driven by services, investment, and recovering agriculture.",
+      "Rwanda has once again proven itself as one of Africa’s most resilient and fast-growing economies with robust 2024 service-led expansion.",
     category: "Economy & Trade",
     author: "Nicholas K. Quest",
     date: new Date("2025-04-01"),
     image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80",
+      "https://www.worldfinance.com/wp-content/uploads/2019/12/Rwanda-economy-set-for-further-growth.jpg",
     content:
-      `**Overview**
-Rwanda's 2025 Economic Update highlights robust growth in 2024, with services, industry, and investment driving the expansion. The report points to improved labor market outcomes and continued strength in private consumption.
+      `Rwanda has once again proven itself as one of Africa’s most resilient and fast-growing economies. In 2024, the country recorded an impressive 8.9% GDP growth, according to the World Bank—surpassing the previous year’s 8.2% and positioning Rwanda among the continent’s top performers.
 
-**Key developments**
-- Real GDP grew 8.9% in 2024, up from 8.2% in 2023.
-- Services and industry led growth, while agriculture recovered.
-- Job creation exceeded half a million year-on-year.
+But beyond the headline number lies a deeper story:
+this growth was not accidental—it was driven by structural shifts, strong policy direction, and the rising dominance of the services sector.
 
-**Quote**
-"Rwanda's real GDP grew by 8.9% in 2024."
+A Growth Story Powered by Services
 
-**Why it matters**
-Rwanda's growth trajectory signals broader regional momentum and provides a template for services-led transformation in East Africa.
+At the heart of Rwanda’s economic expansion is the services sector, which has become the engine of growth.
 
-**What to watch**
-Investment efficiency, agriculture performance, and external balance trends.`
+- Services grew by over 10% in 2024
+- The sector contributed roughly 59% of total GDP growth
+- It remains the largest contributor to GDP, accounting for nearly half of the economy
+
+This includes industries such as:
+
+- Tourism and hospitality
+- Financial services and fintech
+- Transport and logistics
+- ICT and digital services
+
+“Growth was driven by strong performances in services, industry, and a rebound in agriculture.”
+
+What this signals is clear:
+Rwanda is steadily transitioning from a traditionally agriculture-based economy to a service-led, modern economy.
+
+Investment and Consumption Fuel Expansion
+
+Another major driver behind the 8.9% growth was strong domestic demand.
+
+According to the World Bank:
+
+- Private consumption remained robust
+- Investment in infrastructure and development projects increased
+- Business activity expanded across key sectors
+
+Large-scale investments—particularly in construction, aviation, and urban development—played a significant role in boosting economic activity.
+
+This reflects a broader strategy by the Rwandan government to position the country as a regional hub for trade, tourism, and innovation.
+
+Agriculture Recovers, Stabilizing the Economy
+
+While services led the way, agriculture—still a critical sector for employment—also rebounded.
+
+- Agricultural growth reached about 5% in 2024
+- Improved harvests helped stabilize food supply
+- Lower food prices contributed to easing inflation
+
+This recovery is crucial because agriculture supports a large portion of Rwanda’s population, even though it contributes less to GDP compared to services.
+
+Industry Holds Strong
+
+The industrial sector also recorded solid performance:
+
+- Industry expanded by around 10%
+- Construction and manufacturing were key contributors
+
+Together, services, industry, and agriculture created a balanced growth structure, reducing reliance on a single sector.
+
+Macroeconomic Stability Strengthens Confidence
+
+Rwanda’s strong growth was supported by improved macroeconomic conditions:
+
+- Inflation averaged around 4.8%, down from higher levels in previous years
+- Monetary policy remained effective, allowing interest rate adjustments
+- Tax revenues increased, improving the fiscal position
+
+These factors have strengthened investor confidence and reinforced Rwanda’s reputation as a stable economic environment.
+
+Challenges Beneath the Growth
+
+Despite the strong performance, challenges remain:
+
+- The current account deficit widened, driven by high imports and declining external transfers
+- Public debt is projected to rise before stabilizing
+- The economy remains vulnerable to external shocks, including global price fluctuations and climate risks
+
+This highlights an important reality:
+
+Rapid growth does not eliminate risk—it often increases the need for careful economic management.
+
+What This Means for Rwanda’s Future
+
+Rwanda’s 8.9% growth is more than just a statistic—it reflects a country in transition.
+
+From agriculture → to services and innovation
+From recovery → to expansion
+From stability → to transformation
+
+However, sustaining this growth will require:
+
+- Continued investment in productivity
+- Strong export performance
+- Careful management of debt and external balances
+
+Final Thought
+
+Rwanda’s economic performance in 2024 tells a powerful story:
+
+Growth is strongest when it is diversified, disciplined, and forward-looking.
+
+With services leading the way, investment accelerating, and agriculture recovering, Rwanda is not just growing—it is redefining its economic identity.
+
+But the real test lies ahead:
+Can this momentum be sustained in an increasingly uncertain global economy?`
   },
   {
     id: "regional-rwanda-imf-2025",
     title: "IMF: Rwanda reforms on track but buffer rebuilding needed",
     excerpt:
-      "The IMF says Rwanda's PCI reforms have been strong, but fiscal and external pressures warrant consolidation.",
+      "Rwanda’s economic story is one of resilience, discipline, and ambition. Reforms are on track, while buffers must be rebuilt.",
     category: "Economy & Trade",
     author: "Nicholas K. Quest",
     date: new Date("2025-12-04"),
     image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+      "https://www.ivi.int/wp-content/uploads/2022/06/Rwanda-Accession_Amb-Sued-600x400.jpg",
     content:
-      `**Overview**
-The IMF's PCI review says Rwanda has delivered reforms while sustaining strong growth. The Fund emphasizes the need to rebuild fiscal and external buffers and strengthen revenue mobilization.
+      `Rwanda’s economic story is one of resilience, discipline, and ambition. Over the past few years, the country has consistently demonstrated that strong policy direction and reform commitment can drive growth—even in the face of global uncertainty.
 
-**Key developments**
-- PCI performance met all quantitative targets and key reforms.
-- Fiscal and external pressures have increased in 2025.
-- The IMF calls for stronger revenue and spending efficiency.
+Yet beneath this success lies a critical reality:
+while reforms are on track, Rwanda must now focus on rebuilding its economic buffers.
 
-**Quote**
-"Rwanda's economy remains strong and resilient."
+A Reform Agenda That Is Delivering Results
 
-**Why it matters**
-The IMF assessment helps anchor investor confidence and signals Rwanda's policy direction as the PCI program ends.
+Rwanda’s reform trajectory has been widely recognized by the International Monetary Fund, particularly under its Policy Coordination Instrument program.
 
-**What to watch**
-Post-PCI reform agenda and financing for priority infrastructure.`
+The results are impressive:
+
+- Strong economic growth (over 7% in recent years)
+- Inflation kept within target ranges
+- Continued expansion in sectors like construction, services, and exports
+
+In fact, Rwanda’s economy grew by as much as 9.4% in 2025, outperforming expectations and highlighting the strength of its policy framework.
+
+“Rwanda’s economy has proven to be remarkably strong… even in the face of global challenges.”
+
+These outcomes are not accidental—they are the product of deliberate reforms in taxation, fiscal management, and monetary policy.
+
+So What Does “Buffers” Really Mean?
+
+Economic buffers refer to the financial safety nets a country relies on during crises:
+
+- Foreign exchange reserves
+- Fiscal space (government savings and manageable debt)
+- External balance stability
+
+Think of buffers as a country’s shock absorbers. When global crises hit—like pandemics, inflation spikes, or climate shocks—these buffers help maintain stability.
+
+The Challenge: Growth Has Come at a Cost
+
+Despite strong performance, Rwanda faces growing pressure on these buffers.
+
+According to IMF analysis:
+
+- Increased spending on major infrastructure projects (like airports and national investments) has raised borrowing levels
+- External imbalances have widened due to high import demand
+- Successive global and climate-related shocks have made it harder to rebuild reserves
+
+In simple terms:
+Rwanda is growing—but it is spending heavily to do so.
+
+And while this investment is necessary for long-term development, it reduces short-term financial flexibility.
+
+Why Buffer Rebuilding Matters Now
+
+Without adequate buffers:
+
+- Governments struggle to respond to emergencies
+- Debt becomes harder to manage
+- Economic shocks can destabilize growth
+
+The IMF emphasizes that rebuilding buffers is now a top priority, even as reforms continue.
+
+“The policy agenda should focus on sustaining stability and rebuilding buffers.”
+
+The Path Forward: Balancing Growth and Stability
+
+Rwanda’s next phase is not about choosing between growth and stability—it’s about achieving both.
+
+1. Fiscal Consolidation
+
+This means reducing deficits through:
+
+- Increased domestic revenue (tax reforms)
+- Smarter, more efficient spending
+2. Stronger Revenue Systems
+
+Rwanda is already implementing tax reforms aimed at:
+
+- Broadening the tax base
+- Improving compliance
+- Increasing long-term revenue generation
+3. Smarter Debt Management
+
+With rising infrastructure investments, maintaining sustainable borrowing levels is critical.
+
+4. Flexible Monetary Policy
+
+A data-driven approach to inflation and exchange rates will help absorb external shocks more effectively
+
+A Delicate but Achievable Balance
+
+Rwanda’s situation reflects a broader truth in development economics:
+
+Fast growth without safeguards can create vulnerability—but cautious growth without ambition limits progress.
+
+The country is now at a turning point:
+
+- Continue investing in transformation
+- While rebuilding the financial cushions that protect it
+Final Thought
+
+Rwanda’s reforms are not just on track—they are working. The economy is growing, systems are improving, and investor confidence remains strong.
+
+But the next chapter is more complex.
+
+It requires discipline, restraint, and strategic planning.
+
+Because in the end, true economic strength is not just about how fast you grow—
+but how well you can withstand the unexpected.
+`,
   },
   {
     id: "regional-kenya-reforms-2025",

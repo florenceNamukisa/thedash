@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "../components/ui/button";
 
 export const About = ({ onBack }: { onBack?: () => void }) => (
-  <div className="max-w-5xl mx-auto py-10 animate-in fade-in duration-500">
+  <div className="w-full max-w-7xl mx-auto py-10 animate-in fade-in duration-500">
     {onBack && (
       <Button
         variant="ghost"

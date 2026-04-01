@@ -7,6 +7,7 @@ import { ads } from "../data/newsData";
 interface SidebarProps {
   topStories: Post[];
   setPage: (page: string) => void;
+  onSelectPost: (post: Post) => void;
 }
 
 const books = [
@@ -40,7 +41,7 @@ const books = [
   },
 ];
 
-export const Sidebar = ({ topStories, setPage }: SidebarProps) => {
+export const Sidebar = ({ topStories, setPage, onSelectPost }: SidebarProps) => {
   return (
     <aside className="space-y-8">
       {/* Nicholas K. Quest Sponsored Ad */}
@@ -174,10 +175,11 @@ export const Sidebar = ({ topStories, setPage }: SidebarProps) => {
         </div>
         <div className="space-y-4">
           {topStories.slice(0, 5).map((post, index) => (
-            <motion.a
+            <motion.button
               key={post.id}
-              href="#"
-              className="block group"
+              type="button"
+              onClick={() => onSelectPost(post)}
+              className="w-full text-left block group"
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.05 }}
@@ -195,7 +197,7 @@ export const Sidebar = ({ topStories, setPage }: SidebarProps) => {
                   </span>
                 </div>
               </div>
-            </motion.a>
+            </motion.button>
           ))}
         </div>
       </div>

@@ -44,7 +44,7 @@ $host = preg_replace("/^www\./", "", $host);
 $fromEmail = "no-reply@" . $host;
 $fromName = "TheDashAfrica Contact";
 
-$to = "legacyafrica.uganda@gmail.com";
+$to = "buzinirogroup@gmail.com";
 $subject = "New contact message from " . $firstName . " " . $lastName;
 
 $body = "Name: " . $firstName . " " . $lastName . "\n";

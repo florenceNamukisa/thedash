@@ -1,6 +1,6 @@
 import { Post } from "../types";
 import { formatDate } from "../utils/formatDate";
-import { Clock, ArrowRight, Heart, Share2, Bookmark, Copy, Check } from "lucide-react";
+import { Clock, ArrowRight, Heart, Share2, Copy, Check } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 
@@ -13,7 +13,6 @@ interface NewsCardProps {
 export const NewsCard = ({ post, onClick, index }: NewsCardProps) => {
   const [likes, setLikes] = useState(0);
   const [hasLiked, setHasLiked] = useState(false);
-  const [isBookmarked, setIsBookmarked] = useState(false);
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [copied, setCopied] = useState(false);
   const shareMenuRef = useRef<HTMLDivElement>(null);
@@ -21,7 +20,6 @@ export const NewsCard = ({ post, onClick, index }: NewsCardProps) => {
   useEffect(() => {
     const savedLikes = localStorage.getItem(`likes_${post.id}`);
     const userLiked = localStorage.getItem(`user_liked_${post.id}`);
-    const bookmarked = localStorage.getItem(`bookmarked_${post.id}`);
     
     if (savedLikes) {
       setLikes(parseInt(savedLikes));
@@ -30,7 +28,6 @@ export const NewsCard = ({ post, onClick, index }: NewsCardProps) => {
       setLikes(Math.abs(hash % 200) + 15);
     }
     if (userLiked) setHasLiked(true);
-    if (bookmarked) setIsBookmarked(true);
   }, [post.id]);
 
   useEffect(() => {
@@ -51,13 +48,6 @@ export const NewsCard = ({ post, onClick, index }: NewsCardProps) => {
     setLikes(newLikes);
     localStorage.setItem(`likes_${post.id}`, newLikes.toString());
     localStorage.setItem(`user_liked_${post.id}`, newLiked ? "true" : "");
-  };
-
-  const handleBookmark = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    const newBookmarked = !isBookmarked;
-    setIsBookmarked(newBookmarked);
-    localStorage.setItem(`bookmarked_${post.id}`, newBookmarked ? "true" : "");
   };
 
   const handleShare = (platform: string, e: React.MouseEvent) => {
@@ -161,14 +151,6 @@ export const NewsCard = ({ post, onClick, index }: NewsCardProps) => {
                 </div>
               )}
             </div>
-            <button 
-              onClick={handleBookmark}
-              className={`flex items-center justify-center w-7 h-7 rounded-full transition-colors ${
-                isBookmarked ? "bg-orange-500 text-white" : "bg-black/50 text-white hover:bg-orange-500"
-              }`}
-            >
-              <Bookmark className={`w-3 h-3 ${isBookmarked ? "fill-current" : ""}`} />
-            </button>
           </div>
         </div>
       </div>

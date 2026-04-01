@@ -1,7 +1,7 @@
 import { Post } from "../types";
 import { formatDate } from "../utils/formatDate";
 import { formatContent } from "../utils/contentFormatter";
-import { ArrowLeft, Clock, User, Share2, Bookmark, Heart, Copy, Check } from "lucide-react";
+import { ArrowLeft, Clock, User, Share2, Heart, Copy, Check } from "lucide-react";
 import { authorData } from "../data/newsData";
 import { Button } from "./ui/button";
 import { useState, useEffect, useRef } from "react";
@@ -16,7 +16,6 @@ interface NewsDetailProps {
 export const NewsDetail = ({ post, allPosts, onBack, onSelectPost }: NewsDetailProps) => {
   const [likes, setLikes] = useState(0);
   const [hasLiked, setHasLiked] = useState(false);
-  const [isBookmarked, setIsBookmarked] = useState(false);
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [copied, setCopied] = useState(false);
   const shareMenuRef = useRef<HTMLDivElement>(null);
@@ -32,11 +31,10 @@ export const NewsDetail = ({ post, allPosts, onBack, onSelectPost }: NewsDetailP
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Load likes and bookmark from localStorage
+  // Load likes from localStorage
   useEffect(() => {
     const savedLikes = localStorage.getItem(`likes_${post.id}`);
     const userLiked = localStorage.getItem(`user_liked_${post.id}`);
-    const bookmarked = localStorage.getItem(`bookmarked_${post.id}`);
     
     if (savedLikes) {
       setLikes(parseInt(savedLikes));
@@ -47,7 +45,6 @@ export const NewsDetail = ({ post, allPosts, onBack, onSelectPost }: NewsDetailP
       setLikes(initialLikes);
     }
     if (userLiked) setHasLiked(true);
-    if (bookmarked) setIsBookmarked(true);
   }, [post.id]);
 
   const handleLike = () => {
@@ -57,12 +54,6 @@ export const NewsDetail = ({ post, allPosts, onBack, onSelectPost }: NewsDetailP
     setLikes(newLikes);
     localStorage.setItem(`likes_${post.id}`, newLikes.toString());
     localStorage.setItem(`user_liked_${post.id}`, newLiked ? "true" : "");
-  };
-
-  const handleBookmark = () => {
-    const newBookmarked = !isBookmarked;
-    setIsBookmarked(newBookmarked);
-    localStorage.setItem(`bookmarked_${post.id}`, newBookmarked ? "true" : "");
   };
 
   const handleShare = (platform: string) => {
@@ -81,7 +72,7 @@ export const NewsDetail = ({ post, allPosts, onBack, onSelectPost }: NewsDetailP
         shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
         break;
       case "whatsapp":
-        shareUrl = `https://wa.me/?text=${encodeURIComponent(title + " " + url)}`;
+        shareUrl = `https://wa.me/256793192760?text=${encodeURIComponent(title + " " + url)}`;
         break;
     }
     
@@ -239,16 +230,6 @@ export const NewsDetail = ({ post, allPosts, onBack, onSelectPost }: NewsDetailP
                   </div>
                 )}
               </div>
-              
-              {/* Bookmark Button */}
-              <Button
-                variant="ghost"
-                size="icon"
-                className={`h-8 w-8 ${isBookmarked ? "text-orange-600" : "hover:text-orange-600"}`}
-                onClick={handleBookmark}
-              >
-                <Bookmark className={`w-4 h-4 ${isBookmarked ? "fill-orange-500" : ""}`} />
-              </Button>
             </div>
           </div>
         </header>
@@ -317,18 +298,6 @@ export const NewsDetail = ({ post, allPosts, onBack, onSelectPost }: NewsDetailP
                 </div>
               )}
             </div>
-            
-            <button
-              onClick={handleBookmark}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold transition-all ${
-                isBookmarked
-                  ? "bg-orange-500 text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-orange-100 hover:text-orange-600"
-              }`}
-            >
-              <Bookmark className={`w-5 h-5 ${isBookmarked ? "fill-current" : ""}`} />
-              {isBookmarked ? "Saved" : "Save"}
-            </button>
           </div>
         </div>
 

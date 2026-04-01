@@ -1,29 +1,29 @@
 import { useState, useEffect } from "react";
-
-const headlines = [
-  { id: 1, text: "Markets hit record highs amid economic optimism", category: "Business" },
-  { id: 2, text: "Tech giant announces revolutionary AI product launch", category: "Tech" },
-  { id: 3, text: "Global climate summit reaches historic agreement in Geneva", category: "World" },
-  { id: 4, text: "Sports: Championship finals set for this weekend", category: "Sports" },
-  { id: 5, text: "Breaking: Major policy shift expected next week", category: "Politics" },
-  { id: 6, text: "Weather: Severe storm warning issued for coastal regions", category: "Environment" }
-];
+import { allPosts } from "../data/posts";
+import { Post } from "../types";
 
 interface BreakingTickerProps {
-  onHeadlineClick: (category: string) => void;
+  onHeadlineClick: (post: Post) => void;
 }
 
 export const BreakingTicker = ({ onHeadlineClick }: BreakingTickerProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Get the latest 6 articles for the breaking ticker
+  const breakingNews = allPosts.slice(0, 6);
+
   useEffect(() => {
+    if (breakingNews.length === 0) return;
+    
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % headlines.length);
+      setCurrentIndex((prev) => (prev + 1) % breakingNews.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [breakingNews.length]);
 
-  const currentHeadline = headlines[currentIndex];
+  if (breakingNews.length === 0) return null;
+
+  const currentHeadline = breakingNews[currentIndex];
 
   return (
     <div className="bg-brand-red text-white overflow-hidden py-2.5 relative">
@@ -34,11 +34,11 @@ export const BreakingTicker = ({ onHeadlineClick }: BreakingTickerProps) => {
         <div className="overflow-hidden h-5 flex-1 relative">
           <button
             key={currentIndex}
-            onClick={() => onHeadlineClick(currentHeadline.category)}
+            onClick={() => onHeadlineClick(currentHeadline)}
             className="absolute inset-0 flex items-center text-sm font-medium transition-all duration-500 ease-in-out transform translate-y-0 opacity-100 hover:underline cursor-pointer text-left w-full"
           >
             <span className="mr-2 opacity-75">[{currentHeadline.category}]</span>
-            {currentHeadline.text}
+            {currentHeadline.title}
           </button>
         </div>
       </div>

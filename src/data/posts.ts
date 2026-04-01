@@ -34,6 +34,194 @@ const authors = ["Nicholas K. Quest", "Sarah Jenkins", "Mike Ross", "Emily Chen"
 // Clean, simple blog posts - easy to add your own content
 export const allPosts: Post[] = [
   {
+    id: "future-readiness-entrepreneurs-2026",
+    title: "FUTURE-READINESS – 8 LESSONS ENTREPRENEURS MUST KEEP AT HEART",
+    excerpt: "Adaptability trumps intelligence: disciplined future-readiness for entrepreneurs.",
+    category: "Business",
+    author: "Nicholas K. Quest",
+    date: new Date("2026-03-31"),
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=450&fit=crop",
+    isBreaking: false,
+    content: `FUTURE-READINESS – 8 LESSONS ENTREPRENEURS MUST KEEP AT HEART.
+
+Entrepreneurs have always (and will always) known better—that learning from crisis, mistakes, and experiences is the best way to invent the future.
+
+But here’s the uncomfortable truth: the future doesn’t reward the smartest—it rewards the most adaptable.
+
+Research consistently shows that businesses fail not just because of external factors, but because of internal decisions, mindset, and preparedness . Future-readiness, therefore, is not luck—it’s discipline.
+
+“It’s not the strongest that survive, but the most adaptable.” — Charles Darwin
+
+1. Crisis Is a Classroom, Not a Catastrophe
+
+Every disruption—economic downturns, market shifts, even personal setbacks—contains data. The entrepreneurs who win are those who extract lessons instead of emotions.
+
+2. Speed of Learning Beats Size of Capital
+
+Many startups fail despite funding. Why? Because they don’t learn fast enough. Execution without learning is just expensive guessing.
+
+3. Build Systems, Not Hustle
+
+Hustle can start a business—but only systems can sustain it. Systems reduce dependency on the founder and allow scaling.
+
+4. Adaptability Is the New Competitive Advantage
+
+Technology, AI, and global markets are changing industries overnight. Businesses that resist change become irrelevant.
+
+5. Understand That Failure Is Data
+
+Failure is not the opposite of success—it’s part of it. In fact, research shows that emotional responses (like fear or confidence) directly influence business outcomes .
+
+6. Financial Discipline Is Survival
+
+Running out of money is one of the most common reasons businesses collapse. Many founders underestimate capital needs, even when experienced .
+
+7. Stay Close to Reality, Not Assumptions
+
+The biggest mistake entrepreneurs make is building based on assumptions instead of real customer feedback.
+
+8. Never Stop Evolving
+
+The future belongs to learners. Skills expire. Markets shift. Curiosity is the only long-term advantage.
+
+“The illiterate of the 21st century… will be those who cannot learn, unlearn, and relearn.” — Alvin Toffler
+
+Future-readiness is not about predicting tomorrow—it’s about being ready for anything tomorrow brings.`
+  },
+  {
+    id: "profession-based-entrepreneurs-go-broke-2026",
+    title: "WHY PROFESSION BASED ENTREPRENEURS GO BROKE (IT’S SHOCKING)",
+    excerpt: "Professional skill doesn’t equal business success: eight cold truths for profession-based founders.",
+    category: "Business",
+    author: "Nicholas K. Quest",
+    date: new Date("2026-03-31"),
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=450&fit=crop",
+    isBreaking: false,
+    content: `I don’t know about you, but in my case I have always felt like I was born an entrepreneur. This means even the professions I have, I practice them as entrepreneurship. So, I have the audacity—and the right—to shed light on this topic.
+
+Here’s the shocking reality: Being skilled in your profession does NOT mean you will succeed in business.
+
+In fact, many highly educated professionals still fail—not because they lack knowledge, but because they misunderstand business itself.
+
+“The reality of entrepreneurship is very different from the myths.” — Scott Shane
+
+1. Expertise Creates Blind Spots
+
+Doctors, developers, designers—they assume skill equals demand. But the market doesn’t reward skill; it rewards value and positioning.
+
+2. They Underestimate Capital Needs
+
+Even experienced professionals often fail because they misjudge financial requirements, a key factor linked to business collapse .
+
+3. No Product-Market Fit
+
+One of the most consistent findings across startup research is this: many businesses fail because nobody actually wants what they’re selling.
+
+From startup analyses:
+
+“42% of startups fail because there is no market need.”
+
+4. They Build, But Don’t Sell
+
+Professionals love perfecting the product—but ignore marketing and sales. A great product without distribution is invisible.
+
+5. Overconfidence Kills Strategy
+
+Confidence becomes dangerous when it replaces validation. Many assume “clients will come”—they don’t.
+
+6. They Work IN the Business, Not ON It
+
+Profession-based entrepreneurs often stay stuck doing the work instead of building systems.
+
+7. Emotional Decision-Making
+
+Fear, ego, and attachment affect decision-making more than logic. Research confirms emotions influence entrepreneurial outcomes .
+
+8. They Ignore Business Education
+
+Ironically, studies show that formal education alone does not reduce failure risk—but management experience does .
+
+“Being busy is not the same as being profitable.” — Unknown
+
+The truth is harsh: Your profession can make you money—but only business knowledge can make you wealthy.`
+  },
+  {
+    id: "customer-alignment-flow-2026",
+    title: "CUSTOMER ALIGNMENT & FLOW",
+    excerpt: "Customer alignment and flow are the real battlegrounds for conversion and retention.",
+    category: "Business",
+    author: "Nicholas K. Quest",
+    date: new Date("2026-03-31"),
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=450&fit=crop",
+    isBreaking: false,
+    content: `“Stay out of here; it’s a ‘No snack’ week.”
+
+So my heart tells me, parked outside of Cafe Javas in Kampala, debating whether to go inside or not. I stare at their vibrant interior… and suddenly, I’m negotiating with myself.
+
+That moment—right there—is where business happens.
+
+Not inside the shop.
+Not at the checkout.
+But in the mind of the customer.
+
+“People don’t buy products. They buy better versions of themselves.” — Seth Godin
+
+The Hidden Battlefield: The Customer’s Mind
+
+Every purchase begins with tension:
+
+Desire vs discipline
+Price vs value
+Need vs impulse
+
+Businesses that win are those that resolve this tension effortlessly.
+
+Alignment: Meeting the Customer Where They Are
+
+Customer alignment means understanding:
+
+- Their emotional state
+- Their financial reality
+- Their timing
+
+Because even the best product fails if it meets the customer at the wrong moment.
+
+Flow: When Everything Feels Easy
+
+When alignment is right:
+
+- The message clicks
+- The price feels justified
+- The decision feels natural
+
+That’s flow.
+
+What Breaks Alignment
+
+Most businesses fail because they:
+
+- Don’t understand real customer needs
+- Overcomplicate decisions
+- Ignore feedback
+
+In fact, research shows failure often comes from mismatch between strategy and execution, especially when businesses don’t validate customer needs .
+
+The Real Secret
+
+Customers are not logical first—they are emotional first.
+
+Logic only comes later to justify the decision.
+
+That means your job is not just to sell—
+It is to align with the silent conversation happening in your customer’s head.
+
+“Make it simple. Make it memorable. Make it inviting.” — Leo Burnett
+
+And suddenly, that person outside Cafe Javas?
+They’re no longer debating.
+`
+  },
+  {
     id: "uganda-investment-2024",
     title: "Why Investing In Uganda is a Best Choice!",
     excerpt: "Uganda emerges as East Africa's premier investment destination with strategic advantages and government support for international investors.",
@@ -163,7 +351,7 @@ Uganda, will never disappoint when it comes to investments.`
     category: "Tech",
     author: "Nicholas K. Quest", 
     date: new Date("2024-01-10"),
-    image: "https://dibscore.net/wp-content/uploads/2024/07/Agent-Banking-Solution.jpg",
+    image: "/public/images/digital banking.png",
     isBreaking: false,
     content: `Automation and innovation are rapidly transforming the global economy—and the banking sector is no exception. Traditional banks that fail to recognize and adapt to this digital wave risk becoming obsolete. With artificial intelligence (AI) at the heart of these transformations, consumer demand for digital banking services has reached an all-time high.
 
@@ -525,7 +713,7 @@ Crown Prince of Abu Dhabi and Deputy Supreme Commander of the UAE Armed Forces
     category: "Energy & Petrochemicals",
     author: "Nicholas K. Quest",
     date: new Date("2024-01-25"),
-    image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=450&fit=crop",
+    image: "/public/images/TotalEnergies.jpg",
     isBreaking: true,
     content: `In a landmark development for Africa's energy sector, Uganda has signed a historic $10 billion agreement with TotalEnergies and CNOOC for the development of its oil resources, marking a transformative moment for the country's economy and a signal to global investors that East Africa is open for business at scale.
 
@@ -572,7 +760,7 @@ The $10 billion oil deal represents a transformative opportunity for Uganda's ec
     category: "Tech",
     author: "Nicholas K. Quest",
     date: new Date("2024-02-02"),
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop",
+    image: "/public/images/ai.jpeg",
     isBreaking: false,
     content: `Artificial intelligence is no longer a future concept reserved for technology conferences and academic papers. It is already embedded in the daily operations of businesses, governments, and financial institutions across Africa. Credit scoring algorithms determine who qualifies for a mobile loan. Customer service chatbots handle enquiries at banks and telecoms. Hiring platforms screen job applications before any human reviews them. Public-sector analytics tools are being used to prioritise service delivery and allocate resources. And content generated by AI is circulating at scale through media, advertising, and social platforms.
 
@@ -609,7 +797,7 @@ The opportunity for African nations to develop AI governance models that fit the
     category: "Business",
     author: "Nicholas K. Quest",
     date: new Date("2024-02-01"),
-    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=450&fit=crop",
+    image: "https://www.dhl.com/discover/adobe/dynamicmedia/deliver/dm-aid--ee4eb3a1-eb16-4c44-94cd-be9843e4b87b/a-south-african-retailer-guide.jpg?preferwebp=true&quality=82",
     isBreaking: false,
     content: `Many businesses in East Africa do not die from a lack of ideas, ambition, or even customers. They die from a lack of cash — quietly, often without the founder fully understanding why until it is too late. A business can be showing a profit on paper and still find itself unable to pay its suppliers, its rent, or its staff because the timing of money coming in does not match the timing of money going out. This is cash-flow failure, and it is the silent killer of more promising businesses than competition, bad management, or poor strategy combined.
 
@@ -646,7 +834,7 @@ Cash-flow discipline is not glamorous. It does not generate headlines or attract
     category: "Transportation & Logistics",
     author: "Nicholas K. Quest",
     date: new Date("2024-01-30"),
-    image: "https://images.unsplash.com/photo-1494412685616-a5d310fbb07d?w=800&h=450&fit=crop",
+    image: "https://www.ispionline.it/wp-content/uploads/2026/03/20759179108_d7266c5ea1_b-1.jpg",
     isBreaking: false,
     content: `Transport costs are not simply a logistics industry problem — they are an economy-wide problem. When it costs more to move a container of goods from Mombasa to Kampala than it does to ship it from Shanghai to Mombasa, something is fundamentally broken in the regional economic architecture. That cost differential is not absorbed in a corporate balance sheet somewhere. It is embedded in the price of food, medicine, building materials, electronics, and virtually every other traded good that East African households and businesses consume. And it disproportionately penalises the producers and traders who can least afford to absorb it.
 
@@ -683,7 +871,7 @@ The logistics transformation of East Africa's corridors is underway — driven b
     category: "Tourism & Hospitality",
     author: "Nicholas K. Quest",
     date: new Date("2024-01-28"),
-    image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800&h=450&fit=crop",
+    image: "https://ocdn.eu/pulscms-transforms/1/K-CktkpTURBXy9jYzYxYWJlMjBmMDI5MTI5YzgxNzg5N2NmYTBiMDhjMC5wbmeSlQMoAM0EYM0CdpMFzQSwzQJ2",
     isBreaking: false,
     content: `Africa's tourism sector is recovering, and in several key East African destinations it is not merely recovering — it is redefining itself. But the travellers who have returned are not the same as those who left before the COVID-19 pandemic. Their expectations are higher, their research tools are more powerful, and their patience for the frictions that once characterised African travel — inconsistent booking systems, unreliable transport, limited payment options — has diminished. Destinations and hospitality operators who recognise this shift and adapt to it are winning. Those who have not yet made the transition are finding that a general increase in global travel volumes is not translating to the revenue recovery they expected.
 
@@ -726,7 +914,7 @@ For destinations across Uganda, Tanzania, Rwanda, and Kenya, the opportunity ahe
     category: "Real Estate & Construction",
     author: "Nicholas K. Quest",
     date: new Date("2024-01-27"),
-    image: "https://images.unsplash.com/photo-1501183638710-841dd1904471?w=800&h=450&fit=crop",
+    image: "https://www.kampalarealestates.com/wp-content/uploads/2017/01/naalya-estate-for-sale--525x328.jpeg",
     isBreaking: false,
     content: `Across East Africa's fast-growing cities — Kampala, Nairobi, Dar es Salaam, Kigali — the housing gap is widening. Urban populations are expanding at rates that formal construction markets cannot match, and the homes being built are increasingly concentrated at the upper end of the market, where financing is available and returns are fastest. The result is a structural mismatch: a growing middle class that cannot afford to buy or rent formally, an informal settlement sector that accommodates the majority of urban residents in conditions that are neither safe nor economically productive, and a policy conversation that consistently generates new commitments without solving the underlying system failures.
 
@@ -765,7 +953,7 @@ The housing challenge in African cities is not going to be resolved by any singl
     category: "Telecommunication",
     author: "Nicholas K. Quest",
     date: new Date("2024-01-26"),
-    image: "https://images.unsplash.com/photo-1551703599-6b3e8379aa8d?w=800&h=450&fit=crop",
+    image: "https://www.independent.co.ug/wp-content/uploads/2022/11/UTCL.jpg",
     isBreaking: false,
     content: `The promise of 5G is real, transformative, and already reshaping industries in markets where it has been deployed effectively. But the economics of rolling out 5G in emerging markets are complex — and many operators who have rushed into coverage announcements without solving the underlying cost and demand equation are discovering that technology alone does not create a business case.
 
@@ -806,7 +994,7 @@ The operators who will define the 5G era in emerging markets are not necessarily
     category: "Agriculture",
     author: "Nicholas K. Quest",
     date: new Date("2024-01-24"),
-    image: "https://images.unsplash.com/photo-1501004316987-c8e1ecb210d5?w=800&h=450&fit=crop",
+    image: "https://www.agriculture.go.ug/wp-content/uploads/2019/08/DSC05546.jpg",
     isBreaking: false,
     content: `Across sub-Saharan Africa, farmers produce enormous volumes of food — and then watch most of the economic value disappear before it reaches consumers. Post-harvest losses, middlemen, poor storage, weak market linkages, and the absence of processing infrastructure together ensure that the farmer who grew the product captures only a fraction of what a consumer ultimately pays. Value addition is the most powerful lever available to change this equation — and the good news is that the required investments are neither exotic nor out of reach.
 
@@ -843,7 +1031,7 @@ When value addition scales across an agricultural corridor, the effects are not 
     category: "Economy & Trade",
     author: "Nicholas K. Quest",
     date: new Date("2024-01-23"),
-    image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=800&h=450&fit=crop",
+    image: "https://www.monitor.co.ug/resource/blob/4919156/8cb21b3f0816eab489dc48c2ac24bddf/mark001-pix-data.jpg",
     isBreaking: false,
     content: `When a currency weakens, the effects are not felt first in financial reports — they are felt in the price of a litre of fuel, a bag of cement, a packet of medication, and a school fee invoice. For households and businesses across Africa and the Middle East, currency volatility is not an abstract macroeconomic phenomenon. It arrives quietly and quickly in the cost of everyday life, and it demands a response from anyone trying to manage a budget or run a business.
 
@@ -880,7 +1068,7 @@ Currency volatility is a structural challenge for emerging market economies, but
     category: "Education",
     author: "Nicholas K. Quest",
     date: new Date("2024-01-22"),
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=450&fit=crop",
+    image: "https://www.monitor.co.ug/resource/image/1825310/landscape_ratio16x9/1600/900/7d702352c54220482620c0e6f36a54a3/aU/edu01pix.jpg",
     isBreaking: false,
     content: `Across East Africa, the education system produces hundreds of thousands of graduates annually. Yet employers across sectors — from technology and finance to manufacturing and healthcare — consistently report that they cannot find workers with the practical skills they need to fill available roles. This is the skills gap: a structural mismatch between what formal education delivers and what the labour market demands. And it is not going to be solved by waiting for system-wide reform.
 
@@ -923,7 +1111,7 @@ The skills gap is not an unsolvable problem. It is a coordination challenge — 
     category: "Engineering & Construction",
     author: "Nicholas K. Quest",
     date: new Date("2024-01-21"),
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=450&fit=crop",
+    image: "https://i.ytimg.com/vi/MEyM_K6MyOY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDuVyblokoxpRHRKR8jNipUiOCNsg",
     isBreaking: false,
     content: `In the construction industry across Africa, structural failures rarely begin with a catastrophic decision. They begin with small compromises — a specification quietly substituted for a cheaper material, a supervisor who was not on site during a critical pour, a timeline compressed without a corresponding reassessment of risk. By the time the failure becomes visible, its causes are often months or years in the past, buried under layers of documentation that was either incomplete or never reviewed.
 
@@ -964,7 +1152,7 @@ The good news is that quality management, when embedded clearly into project pla
     category: "Industry & Mining",
     author: "Nicholas K. Quest",
     date: new Date("2024-01-19"),
-    image: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=800&h=450&fit=crop",
+    image: "https://kisitamininglimited.com/wp-content/uploads/2023/08/Locations-of-Gold-mining-in-Uganda.webp",
     isBreaking: false,
     content: `Africa sits on top of an extraordinary share of the world's mineral wealth. The continent holds the majority of global reserves of cobalt, platinum, chromium, and manganese, significant shares of gold, copper, and lithium reserves, and enormous deposits of the minerals that the global transition to clean energy is making ever more strategically important. The challenge has never been whether Africa has the resources. The challenge has always been whether Africa will capture the economic value those resources represent — or simply export the raw material and watch that value be created elsewhere.
 
@@ -1003,7 +1191,7 @@ Processing is genuinely hard. But it is where the permanent jobs are, where the 
     category: "Legal & Consulting",
     author: "Nicholas K. Quest",
     date: new Date("2024-01-18"),
-    image: "https://images.unsplash.com/photo-1450101215322-bf5cd27642fc?w=800&h=450&fit=crop",
+    image: "https://uploads-ssl.webflow.com/5c4c5e6cc49ea627e2aff125/5c827ac36e5f740113c422c3_Image-7.jpeg",
     isBreaking: false,
     content: `Even promising startups often face setbacks because of avoidable compliance mistakes. These errors usually happen when founders focus entirely on growth while postponing legal and regulatory responsibilities. The result is preventable — and the cost of fixing it later is almost always higher than doing it right from the start.
 
@@ -1036,7 +1224,7 @@ By addressing compliance areas such as business registration, contracts, tax obl
     category: "Hygiene & Homes",
     author: "Nicholas K. Quest",
     date: new Date("2024-01-17"),
-    image: "https://images.unsplash.com/photo-1523978591478-c753949ff840?w=800&h=450&fit=crop",
+    image: "https://www.unicef.org/uganda/sites/unicef.org.uganda/files/styles/hero_extended/public/UGDA_WASH_2070.jpg.webp?itok=Sddxm5AO",
     isBreaking: false,
     content: `When public health officials in East Africa map the most significant drivers of preventable illness, inadequate sanitation and poor hygiene infrastructure appear consistently at the top of the list. Waterborne diseases — cholera, typhoid, dysentery — disproportionately affect communities without reliable access to clean water and basic sanitation facilities. Yet the investment required to address these risks is, in comparative terms, modest. And the returns on that investment — measured in reduced healthcare costs, improved school attendance, increased labour productivity, and stronger investor confidence — are among the highest available across the entire public health and development landscape.
 
@@ -1075,7 +1263,7 @@ The argument for investing in sanitation and hygiene is not sentimental. It is e
     category: "Military & Security",
     author: "Nicholas K. Quest",
     date: new Date("2024-01-16"),
-    image: "https://images.unsplash.com/photo-1526378722370-8d4a6c3ef6d7?w=800&h=450&fit=crop",
+    image: "https://www.updf.go.ug/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-06-at-16.29.56.jpeg",
     isBreaking: false,
     content: `Security has always been the foundation on which investment, commerce, and social stability are built. But the nature of security has changed fundamentally in the past decade. Physical threats — crime, conflict, border instability — remain real concerns across parts of East and Central Africa. But they now coexist with a category of threats that are equally disruptive, significantly harder to attribute, and in some cases more economically damaging: digital security threats.
 
@@ -1120,7 +1308,7 @@ The countries in East Africa that are making the most progress in digital securi
     category: "World",
     author: "Nicholas K. Quest",
     date: new Date("2024-01-14"),
-    image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&h=450&fit=crop",
+    image: "https://static.wixstatic.com/media/e28a6b_44cc92332f85434284e296461693d7a0~mv2.png/v1/fill/w_568,h_370,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e28a6b_44cc92332f85434284e296461693d7a0~mv2.png",
     isBreaking: false,
     content: `Elections are not only political milestones — they are powerful economic events that influence financial markets across the globe. Investors, corporations, and financial institutions pay close attention to election cycles because changes in leadership often bring new economic policies that affect taxes, regulation, trade, and government spending.
 
@@ -1179,7 +1367,7 @@ For businesses, navigating election cycles requires clear scenario thinking, an 
     category: "Sports",
     author: "Nicholas K. Quest",
     date: new Date("2024-01-13"),
-    image: "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=800&h=450&fit=crop",
+    image: "https://www.monitor.co.ug/resource/image/1736588/landscape_ratio16x9/1600/900/d43c9bf1741a2b6c2b9f6524aac0c082/zR/score01pix.jpg",
     isBreaking: false,
     content: `When millions of fans pack stadiums across East and West Africa on a Saturday afternoon, very few of them are thinking about economics. But the organisations behind those moments — the clubs, leagues, sponsors, broadcasters, and agents — most certainly are. African sports is no longer just entertainment. It is becoming a serious business, and the world is starting to pay attention.
 
@@ -1236,7 +1424,7 @@ For investors, corporate brands, governments, and entrepreneurs, African sports 
     category: "Parastatals (Uganda)",
     author: "Nicholas K. Quest",
     date: new Date("2024-01-12"),
-    image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=800&h=450&fit=crop",
+    image: "https://www.monitor.co.ug/resource/blob/4428330/163590b0da34873c3fd45be673c81228/home002pixx-data.jpg",
     isBreaking: false,
     content: `Uganda's parastatals — the state-owned and state-linked enterprises that deliver electricity, water, transport infrastructure, financial services, and other essential services — sit at the centre of the country's economic development story. When they perform well, they reduce the cost of doing business, improve quality of life for citizens, and signal to private investors that the institutional environment is functional and trustworthy. When they perform poorly, they create an invisible tax on every transaction in the economy — through power outages, infrastructure delays, inefficient procurement, and services that fail to meet the basic expectations of citizens who depend on them.
 
@@ -1275,7 +1463,7 @@ High-performing parastatals are not a nice-to-have component of economic develop
     category: "Society & Lifestyle",
     author: "Nicholas K. Quest",
     date: new Date("2024-01-11"),
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=450&fit=crop",
+    image: "https://www.independent.co.ug/wp-content/uploads/2026/02/Photo-d.jpg",
     isBreaking: false,
     content: `There is a paradox at the heart of modern digital life. The same devices that connect us to the people and information we value most are engineered, at their deepest level, to extract as much of our time and attention as possible. Every notification, every algorithmically curated feed, every infinite scroll is designed by some of the world's best engineers and behaviour scientists to make disengagement difficult. The result, for millions of people across East Africa and globally, is a creeping sense of being perpetually connected but rarely present — busy but not productive, informed but not fulfilled.
 
@@ -1317,7 +1505,7 @@ Digital wellbeing is not a rejection of modern life. It is an investment in the 
     category: "Sports",
     author: "Nicholas K. Quest",
     date: new Date("2024-02-20"),
-    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&h=450&fit=crop",
+    image: "https://fufa.co.ug/wp-content/uploads/2019/07/Uganda-Cranes-XI.jpg",
     isBreaking: false,
     content: `The Uganda Cranes stand at a pivotal moment in their history. As the team gears up for the 2025 Africa Cup of Nations qualifiers, the dreams of millions of Ugandan football fans hang in the balance. This is not just about football — this is about national pride, unity, and the aspirations of a young nation hungry for continental success.
 
@@ -1346,7 +1534,7 @@ Ugandan fans have been incredibly supportive, filling stadiums with their charac
     category: "Sports",
     author: "Mike Ross",
     date: new Date("2024-02-18"),
-    image: "https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=800&h=450&fit=crop",
+    image: "https://sportal365images.com/process/smp-images-production/ringier.africa/11062023/421ce048-f00b-4b2e-898c-228f0912b582.jpg?operations=autocrop(700:467)",
     isBreaking: false,
     content: `The Uganda Premier League has been delivering spectacular football this season, with clubs battling for supremacy in what has become one of East Africa's most competitive domestic leagues.
 
@@ -1369,7 +1557,7 @@ Express FC remain competitive, with their traditional fighting spirit keeping th
     category: "Sports",
     author: "Sarah Jenkins",
     date: new Date("2024-02-15"),
-    image: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&h=450&fit=crop",
+    image: "https://i0.wp.com/africasolutionsmediahub.org/wp-content/uploads/2025/08/East_Africa_s_triple_play_CHAN_puts_region_on_Africa_s_football_map_2.jpg?fit=1024%2C683&ssl=1",
     isBreaking: false,
     content: `The FUFA Super 8 has become one of East Africa's most anticipated football tournaments, bringing together the best clubs from Uganda and inviting teams from Kenya, Tanzania, and Rwanda.
 
@@ -1382,7 +1570,7 @@ The tournament provides a platform for clubs to test themselves against regional
     category: "Sports",
     author: "Emily Chen",
     date: new Date("2024-02-12"),
-    image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=800&h=450&fit=crop",
+    image: "https://newvision-media.s3.amazonaws.com/cms/4b8414d0-ce69-4189-83e3-297f17e64c6e.jpg",
     isBreaking: false,
     content: `Uganda's netball team, the She-Cranes, has been making significant progress on the international stage. The sport has grown tremendously in popularity across the country.
 
@@ -1395,7 +1583,7 @@ The Uganda Netball Federation has been working to expand the sport's reach beyon
     category: "Sports",
     author: "David Kim",
     date: new Date("2024-02-10"),
-    image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800&h=450&fit=crop",
+    image: "https://cdn.prod.website-files.com/65085ce6fbc88f52001a2d70/65d139a297e6b6e63e5cc721_feYq5DFfH0apB8uxjompUw.jpg",
     isBreaking: false,
     content: `The Uganda National Basketball League (NBL) has been developing steadily, with local players showcasing their talents against regional and international competition.
 
@@ -1403,73 +1591,8 @@ Ugandan players have been attracting attention from college scouts in the United
 
 The national team, the Silverbacks, has been representing Uganda in FIBA competitions, working to improve their ranking.`
   },
-  {
-    id: "uganda-athletics-cheptegei",
-    title: "Joshua Cheptegei: Uganda's World Record Breaking Star",
-    excerpt: "Joshua Cheptegei continues to make history with world record performances, inspiring a new generation.",
-    category: "Sports",
-    author: "Nicholas K. Quest",
-    date: new Date("2024-02-08"),
-    image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&h=450&fit=crop",
-    isBreaking: false,
-    content: `Uganda's long-distance running tradition continues to produce world-class athletes, with Joshua Cheptegei leading the way as one of the most exciting athletes in global athletics.
 
-Cheptegei has been breaking world records and winning multiple international titles. His achievements have inspired a new generation of Ugandan runners.
 
-The Ugandan athletics program has been investing in developing athletes across various distance events.`
-  },
-  {
-    id: "uganda-boxing-future",
-    title: "Uganda Boxing: Punching Above Its Weight",
-    excerpt: "Ugandan boxers continue to make their mark on the international stage.",
-    category: "Sports",
-    author: "Mike Ross",
-    date: new Date("2024-02-05"),
-    image: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=800&h=450&fit=crop",
-    isBreaking: false,
-    content: `Ugandan boxing has a proud history, with several boxers achieving success at the Olympic Games and World Championships. The sport continues to attract young athletes who see boxing as a path to national glory.
-
-Recent investments in boxing infrastructure and training facilities have improved the sport's development pathways.`
-  },
-  {
-    id: "uganda-youth-development",
-    title: "Youth Development: The Future of Ugandan Sports",
-    excerpt: "Investment in youth sports programs across Uganda is creating pathways for young athletes.",
-    category: "Sports",
-    author: "Sarah Jenkins",
-    date: new Date("2024-02-03"),
-    image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&h=450&fit=crop",
-    isBreaking: false,
-    content: `The foundation of Ugandan sports success lies in youth development. Schools across the country have been running sports programs that identify and nurture talented young athletes.
-
-FUFA's youth academies have been crucial in developing football talent, with club academies also contributing significantly.`
-  },
-  {
-    id: "uganda-sports-infrastructure",
-    title: "Sports Infrastructure: Building for the Future",
-    excerpt: "Uganda continues to invest in sports infrastructure, with improvements to stadiums and training facilities.",
-    category: "Sports",
-    author: "Emily Chen",
-    date: new Date("2024-02-01"),
-    image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=800&h=450&fit=crop",
-    isBreaking: false,
-    content: `Uganda has been investing in sports infrastructure, with improvements to stadiums, training facilities, and sports centers.
-
-The Mandela National Stadium in Namboole remains the flagship venue for football. Regional stadiums have been upgraded to provide quality venues.`
-  },
-  {
-    id: "uganda-community-sports",
-    title: "Community Sports: The Heartbeat of Ugandan Athletics",
-    excerpt: "Local leagues and competitions across Uganda provide opportunities for people of all ages.",
-    category: "Sports",
-    author: "David Kim",
-    date: new Date("2024-01-30"),
-    image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&h=450&fit=crop",
-    isBreaking: false,
-    content: `Beyond the professional and elite levels, community sports play a vital role in Ugandan society. Local leagues and competitions provide opportunities for people of all ages to participate in sports.
-
-These grassroots programs are the foundation from which elite talent emerges. Young athletes who excel at the community level can progress through structured development pathways.`
-  },
   // ========== TECH BLOG POSTS ==========
   {
     id: "ai-africa-tech-2024",
@@ -1478,7 +1601,7 @@ These grassroots programs are the foundation from which elite talent emerges. Yo
     category: "Tech",
     author: "Nicholas K. Quest",
     date: new Date("2024-02-22"),
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop",
+    image: "https://iafrica.com/wp-content/uploads/2025/12/uganda-ai.png",
     isBreaking: false,
     content: `Artificial Intelligence is no longer a futuristic concept in Africa — it is a present-day reality transforming industries across the continent. From startups in Nairobi using AI to improve healthcare delivery to companies in Lagos leveraging machine learning for financial services, Africa is embracing AI with enthusiasm and innovation.
 
@@ -1501,7 +1624,7 @@ The financial sector has been quick to adopt AI, with mobile money platforms and
     category: "Tech",
     author: "Mike Ross",
     date: new Date("2024-02-19"),
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=450&fit=crop",
+    image: "https://businesstimesug.com/wp-content/uploads/2025/10/Julius-Kakeeto-Managing-Director-of-Pearl-Bank-formerly-PostBank-Uganda-back-left-and-Mumba-Kenneth-Kalifungwa-Chief-Executive-Stanbic-Bank-Uganda-back-right-pose-during-the-launch-in-Kampala.jpeg",
     isBreaking: false,
     content: `Uganda has experienced a financial revolution driven by mobile money. What started as a way to transfer airtime credits has evolved into a comprehensive financial ecosystem that has transformed how Ugandans save, borrow, and make payments.
 
@@ -1520,7 +1643,7 @@ The impact on financial inclusion has been dramatic. People can now receive paym
     category: "Tech",
     author: "Sarah Jenkins",
     date: new Date("2024-02-16"),
-    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=450&fit=crop",
+    image: "https://www.ecosystem.build/wp-content/uploads/2024/11/Ecosystem-And-Expert-Consultation.jpeg",
     isBreaking: false,
     content: `Uganda's startup ecosystem is flourishing as entrepreneurs develop innovative solutions to local challenges. From agritech to healthtech, Kampala-based startups are addressing problems that affect millions of Ugandans.
 
@@ -1532,25 +1655,8 @@ Agritech startups are helping farmers increase productivity through mobile apps 
 
 The ecosystem is supported by incubators, accelerators, and co-working spaces that provide startups with the resources they need to grow.`
   },
-  {
-    id: "telecom-uganda-5g",
-    title: "Telecommunications in Uganda: The Road to 5G and Beyond",
-    excerpt: "Uganda's telecom sector is preparing for 5G rollout while expanding 4G coverage to bridge the digital divide.",
-    category: "Tech",
-    author: "Emily Chen",
-    date: new Date("2024-02-13"),
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=450&fit=crop",
-    isBreaking: false,
-    content: `Uganda's telecommunications sector has come a long way, and the country is now preparing for the next generation of mobile technology.
+  
 
-**Current State**
-
-Major telecom providers have invested heavily in network infrastructure, with 4G now available in most urban areas. The competition has driven down data costs.
-
-**5G Preparations**
-
-Telecom companies are conducting trials and preparing for 5G rollout. This next-generation technology promises faster speeds and lower latency.`
-  },
   {
     id: "cybersecurity-uganda",
     title: "Cybersecurity in Uganda: Protecting Digital Assets in an Connected World",
@@ -1558,7 +1664,7 @@ Telecom companies are conducting trials and preparing for 5G rollout. This next-
     category: "Tech",
     author: "David Kim",
     date: new Date("2024-02-11"),
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=450&fit=crop",
+    image: "https://media.licdn.com/dms/image/v2/D4D12AQHIgucOvruLRg/article-cover_image-shrink_720_1280/B4DZjLyj4QGkAI-/0/1755765687013?e=2147483647&v=beta&t=OI94pN0R2Rs69cxe5zolulrBr9kc2SYvOxbi6hlwiQg",
     isBreaking: false,
     content: `With increasing internet penetration and digital adoption, cybersecurity has become a critical concern for Uganda.
 
@@ -1570,44 +1676,7 @@ Cyber threats in Uganda include phishing attacks, malware, ransomware, and onlin
 
 Uganda is working to build its cybersecurity capacity through training programs, legislation, and international partnerships.`
   },
-  {
-    id: "digital-education-uganda",
-    title: "Digital Education in Uganda: Technology Transforming Learning",
-    excerpt: "Edtech startups and government initiatives are using technology to improve access to quality education across Uganda.",
-    category: "Tech",
-    author: "Nicholas K. Quest",
-    date: new Date("2024-02-09"),
-    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=450&fit=crop",
-    isBreaking: false,
-    content: `Technology is transforming education in Uganda, with digital tools making quality learning more accessible to students across the country.
-
-**Edtech Solutions**
-
-Ugandan edtech startups are developing apps and platforms that provide educational content, interactive lessons, and exam preparation materials.
-
-**Government Initiatives**
-
-The government has been integrating technology into the education system, with programs to provide tablets to schools and train teachers in digital pedagogy.`
-  },
-  {
-    id: "smart-cities-uganda",
-    title: "Smart Cities in Uganda: Urban Innovation for Better Living",
-    excerpt: "Kampala and other Ugandan cities are exploring smart city solutions to address urban challenges.",
-    category: "Tech",
-    author: "Mike Ross",
-    date: new Date("2024-02-07"),
-    image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&h=450&fit=crop",
-    isBreaking: false,
-    content: `Ugandan cities are growing rapidly, and smart city solutions are being explored to manage urbanization challenges and improve quality of life.
-
-**Urban Challenges**
-
-Rapid urbanization brings challenges including traffic congestion, waste management, and service delivery. Smart city technologies offer potential solutions.
-
-**Pilot Projects**
-
-Kampala is implementing pilot projects in areas like traffic management, public transport, and digital services.`
-  },
+  
   // ========== BUSINESS BLOG POSTS ==========
   {
     id: "uganda-economy-2024-growth",

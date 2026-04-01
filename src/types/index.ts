@@ -10,17 +10,6 @@ export interface Post {
   content?: string;
 }
 
-export interface Video {
-  id: string;
-  title: string;
-  category: string;
-  channel?: string;
-  date?: Date;
-  thumbnail: string;
-  videoUrl: string;
-  description?: string;
-}
-
 export interface Ad {
   id: string;
   image: string;

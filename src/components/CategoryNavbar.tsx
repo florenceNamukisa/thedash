@@ -11,7 +11,7 @@ const pageLinks = [
   { label: "About Us", page: "about" },
   { label: "Careers", page: "careers" },
   { label: "Contact", page: "contact" },
-  { label: "Subscribe", page: "subscription" },
+  { label: "Subscribe", page: "subscribe" },
 ];
 
 export const CategoryNavbar = ({
