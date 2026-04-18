@@ -55,7 +55,7 @@ export const CommentsSection = ({ articleId }: CommentsSectionProps) => {
           }
         });
       } catch (e) {
-        console.log("Google Sign-In not configured");
+        // Google Sign-In not configured
       }
     }
   }, []);
@@ -71,7 +71,7 @@ export const CommentsSection = ({ articleId }: CommentsSectionProps) => {
           date: new Date(c.date)
         })));
       } catch (e) {
-        console.error("Failed to parse comments", e);
+        // Failed to parse comments
       }
     }
     setIsLoading(false);

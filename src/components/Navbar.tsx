@@ -61,8 +61,35 @@ export const Navbar = ({
     setIsMobileMenuOpen(false);
   };
 
-  const handleAdvertiseClick = () => {
+  const handleAboutClick = () => {
+    setPage("about");
+    setSelectedCategory("All");
+    setSearchQuery("");
+    setIsDropdownOpen(false);
+    setIsMobileMenuOpen(false);
+    setIsSearchOpen(false);
+  };
+
+  const handleCareersClick = () => {
+    setPage("careers");
+    setSelectedCategory("All");
+    setSearchQuery("");
+    setIsDropdownOpen(false);
+    setIsMobileMenuOpen(false);
+    setIsSearchOpen(false);
+  };
+
+  const handleContactClick = () => {
     setPage("contact");
+    setSelectedCategory("All");
+    setSearchQuery("");
+    setIsDropdownOpen(false);
+    setIsMobileMenuOpen(false);
+    setIsSearchOpen(false);
+  };
+
+  const handleAdvertiseClick = () => {
+    setPage("advertise");
     setSelectedCategory("All");
     setSearchQuery("");
     setIsDropdownOpen(false);
@@ -107,6 +134,39 @@ export const Navbar = ({
           >
             <Home className="w-4 h-4" />
             Home
+          </button>
+
+          {/* About */}
+          <button
+            onClick={handleAboutClick}
+            className={`px-4 py-2 text-sm font-bold rounded-md transition-all ${currentPage === "about"
+              ? "bg-blue-50 text-brand-blue"
+              : "text-gray-600 hover:bg-gray-50 hover:text-brand-blue"
+              }`}
+          >
+            About
+          </button>
+
+          {/* Careers */}
+          <button
+            onClick={handleCareersClick}
+            className={`px-4 py-2 text-sm font-bold rounded-md transition-all ${currentPage === "careers"
+              ? "bg-blue-50 text-brand-blue"
+              : "text-gray-600 hover:bg-gray-50 hover:text-brand-blue"
+              }`}
+          >
+            Careers
+          </button>
+
+          {/* Contact */}
+          <button
+            onClick={handleContactClick}
+            className={`px-4 py-2 text-sm font-bold rounded-md transition-all ${currentPage === "contact"
+              ? "bg-blue-50 text-brand-blue"
+              : "text-gray-600 hover:bg-gray-50 hover:text-brand-blue"
+              }`}
+          >
+            Contact
           </button>
 
           {/* Videos */}
@@ -172,7 +232,7 @@ export const Navbar = ({
           {/* Advertise */}
           <button
             onClick={handleAdvertiseClick}
-            className={`px-4 py-2 text-sm font-bold rounded-md transition-all ${currentPage === "contact"
+            className={`px-4 py-2 text-sm font-bold rounded-md transition-all ${currentPage === "advertise"
               ? "bg-blue-50 text-brand-blue"
               : "text-gray-600 hover:bg-gray-50 hover:text-brand-blue"
               }`}
@@ -243,6 +303,48 @@ export const Navbar = ({
           </button>
 
           <button
+            onClick={handleAboutClick}
+            className={`w-full text-left px-4 py-3 text-sm font-bold rounded-md flex items-center justify-between ${currentPage === "about"
+              ? "bg-blue-50 text-brand-blue"
+              : "text-gray-600 hover:bg-gray-50"
+              }`}
+          >
+            <div className="flex items-center gap-2">
+              <span className="w-4 h-4 inline-flex items-center justify-center">ℹ</span>
+              About
+            </div>
+            {currentPage === "about" && <div className="w-1.5 h-1.5 bg-brand-blue rounded-full" />}
+          </button>
+
+          <button
+            onClick={handleCareersClick}
+            className={`w-full text-left px-4 py-3 text-sm font-bold rounded-md flex items-center justify-between ${currentPage === "careers"
+              ? "bg-blue-50 text-brand-blue"
+              : "text-gray-600 hover:bg-gray-50"
+              }`}
+          >
+            <div className="flex items-center gap-2">
+              <span className="w-4 h-4 inline-flex items-center justify-center">💼</span>
+              Careers
+            </div>
+            {currentPage === "careers" && <div className="w-1.5 h-1.5 bg-brand-blue rounded-full" />}
+          </button>
+
+          <button
+            onClick={handleContactClick}
+            className={`w-full text-left px-4 py-3 text-sm font-bold rounded-md flex items-center justify-between ${currentPage === "contact"
+              ? "bg-blue-50 text-brand-blue"
+              : "text-gray-600 hover:bg-gray-50"
+              }`}
+          >
+            <div className="flex items-center gap-2">
+              <span className="w-4 h-4 inline-flex items-center justify-center">📞</span>
+              Contact
+            </div>
+            {currentPage === "contact" && <div className="w-1.5 h-1.5 bg-brand-blue rounded-full" />}
+          </button>
+
+          <button
             onClick={handleVideosClick}
             className={`w-full text-left px-4 py-3 text-sm font-bold rounded-md flex items-center justify-between ${currentPage === "videos"
               ? "bg-blue-50 text-brand-blue"
@@ -264,7 +366,7 @@ export const Navbar = ({
               }`}
           >
             <div className="flex items-center gap-2">
-              <span className="w-4 h-4 inline-flex items-center justify-center">💼</span>
+              <span className="w-4 h-4 inline-flex items-center justify-center">📢</span>
               Advertise
             </div>
             {currentPage === "advertise" && <div className="w-1.5 h-1.5 bg-brand-blue rounded-full" />}

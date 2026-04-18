@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import type { ReactNode } from "react";
 import { ArrowUp } from "lucide-react";
+import { Routes, Route, useNavigate, useParams } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { BreakingTicker } from "./components/BreakingTicker";
 import { CategoryNavbar } from "./components/CategoryNavbar";
@@ -33,8 +34,68 @@ const pageVariants = {
   exit: { opacity: 0, y: -10, transition: { duration: 0.3, ease: "easeIn" } }
 };
 
+// Article Page Component
+function ArticlePage() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const post = allPosts.find(p => p.id === id);
 
-function App() {
+  if (!post) {
+    return (
+      <div className="min-h-screen bg-white flex flex-col font-sans">
+        <Navbar
+          currentPage="home"
+          setPage={(page) => navigate(page === "home" ? "/" : `/${page}`)}
+          isMobileMenuOpen={false}
+          setIsMobileMenuOpen={() => {}}
+          selectedCategory="All"
+          setSelectedCategory={() => {}}
+          searchQuery=""
+          setSearchQuery={() => {}}
+        />
+        <main className="flex-grow max-w-7xl mx-auto w-full px-4 py-6">
+          <div className="text-center py-20">
+            <h1 className="text-2xl font-bold text-gray-900 mb-4">Article Not Found</h1>
+            <p className="text-gray-600 mb-6">The article you're looking for doesn't exist.</p>
+            <button
+              onClick={() => navigate("/")}
+              className="px-6 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors"
+            >
+              Back to Home
+            </button>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-white flex flex-col font-sans">
+      <Navbar
+        currentPage="home"
+        setPage={(page) => navigate(page === "home" ? "/" : `/${page}`)}
+        isMobileMenuOpen={false}
+        setIsMobileMenuOpen={() => {}}
+        selectedCategory="All"
+        setSelectedCategory={() => {}}
+        searchQuery=""
+        setSearchQuery={() => {}}
+      />
+      <main className="flex-grow max-w-7xl mx-auto w-full px-4 py-6">
+        <NewsDetail
+          post={post}
+          allPosts={allPosts}
+          onBack={() => navigate("/")}
+          onSelectPost={(p) => navigate(`/article/${p.id}`)}
+        />
+      </main>
+    </div>
+  );
+}
+
+// Home Page Component
+function HomePage() {
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState("home");
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -51,9 +112,24 @@ function App() {
     if (page === "subscribe") {
       setShowSubscribeModal(true);
       setCurrentPage("home");
+    } else if (page === "home") {
+      setCurrentPage("home");
+      navigate("/");
     } else {
       setCurrentPage(page);
+      navigate(`/${page}`);
     }
+  };
+
+  useEffect(() => {
+    const path = window.location.pathname.slice(1);
+    if (path && ["about", "careers", "contact", "videos", "advertise", "subscribe"].includes(path)) {
+      setCurrentPage(path);
+    }
+  }, []);
+
+  const handlePostClick = (post: Post) => {
+    navigate(`/article/${post.id}`);
   };
 
   // Filter posts
@@ -176,7 +252,7 @@ function App() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
                 className="cursor-pointer group"
-                onClick={() => setSelectedPost(post)}
+                onClick={() => handlePostClick(post)}
               >
                 <div className="relative overflow-hidden rounded-lg mb-2">
                   <img src={post.image} alt="" className="w-full h-24 object-cover transition-transform duration-500 group-hover:scale-110" />
@@ -196,7 +272,7 @@ function App() {
 
       {/* Right Column */}
       <div className="lg:col-span-3 order-last lg:order-none space-y-6">
-        <Sidebar topStories={topStories} setPage={handleSetPage} onSelectPost={setSelectedPost} />
+        <Sidebar topStories={topStories} setPage={handleSetPage} onSelectPost={handlePostClick} />
 
         <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
           <h3 className="text-sm font-bold uppercase tracking-wide text-gray-500 mb-4">
@@ -206,7 +282,7 @@ function App() {
             {localArticles.map((post) => (
               <button
                 key={post.id}
-                onClick={() => setSelectedPost(post)}
+                onClick={() => handlePostClick(post)}
                 className="w-full text-left p-3 rounded-lg border border-gray-100 hover:shadow-md transition-shadow group"
               >
                 <p className="text-sm font-bold text-gray-900 leading-snug group-hover:text-orange-600 transition-colors line-clamp-2">
@@ -226,7 +302,7 @@ function App() {
             {regionalSidebarArticles.map((post) => (
               <button
                 key={post.id}
-                onClick={() => setSelectedPost(post)}
+                onClick={() => handlePostClick(post)}
                 className="w-full text-left p-3 rounded-lg border border-gray-100 hover:shadow-md transition-shadow group"
               >
                 <p className="text-sm font-bold text-gray-900 leading-snug group-hover:text-orange-600 transition-colors line-clamp-2">
@@ -249,7 +325,7 @@ function App() {
             post={selectedPost}
             allPosts={allPosts}
             onBack={() => setSelectedPost(null)}
-            onSelectPost={setSelectedPost}
+            onSelectPost={handlePostClick}
           />
         </PageLayout>
       );
@@ -298,7 +374,7 @@ function App() {
             <PageLayout>
               {/* Hero Slider */}
               {sliderPosts.length > 0 && (
-                <HeroSlider posts={sliderPosts} onPostClick={setSelectedPost} />
+                <HeroSlider posts={sliderPosts} onPostClick={handlePostClick} />
               )}
 
               {/* Latest Articles */}
@@ -311,7 +387,7 @@ function App() {
                   {(latestHomeArticles.length > 0 ? latestHomeArticles : latestArticles).map((post) => (
                     <button
                       key={post.id}
-                      onClick={() => setSelectedPost(post)}
+                      onClick={() => handlePostClick(post)}
                       className="group flex gap-3 rounded-xl border border-gray-100 p-3 text-left hover:shadow-md transition-shadow"
                     >
                       <img
@@ -343,7 +419,7 @@ function App() {
                   {popularArticles.map((post) => (
                     <button
                       key={post.id}
-                      onClick={() => setSelectedPost(post)}
+                      onClick={() => handlePostClick(post)}
                       className="group flex gap-3 rounded-xl border border-gray-100 p-3 text-left hover:shadow-md transition-shadow"
                     >
                       <img
@@ -370,7 +446,7 @@ function App() {
 
               <div className="space-y-6">
                 {feedPosts.map((post, index) => (
-                  <NewsCard key={post.id} post={post} onClick={setSelectedPost} index={index} />
+                  <NewsCard key={post.id} post={post} onClick={handlePostClick} index={index} />
                 ))}
               </div>
 
@@ -405,7 +481,7 @@ function App() {
         setSearchQuery={setSearchQuery}
       />
       <BillboardAd />
-      <BreakingTicker onHeadlineClick={setSelectedPost} />
+      <BreakingTicker onHeadlineClick={handlePostClick} />
       <CategoryNavbar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} setPage={handleSetPage} />
 
       {showSubscribeModal && (
@@ -441,6 +517,7 @@ function App() {
                 { label: "Contact", page: "contact" },
                 { label: "Subscribe", page: "subscribe" },
                 { label: "Podcasts", page: "videos" },
+                { label: "Advertise", page: "advertise" },
               ].map((item) => (
                 <li key={item.label}>
                   <button
@@ -507,6 +584,21 @@ function App() {
       )}
       <WhatsAppButton />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/article/:id" element={<ArticlePage />} />
+      <Route path="/about" element={<HomePage />} />
+      <Route path="/careers" element={<HomePage />} />
+      <Route path="/contact" element={<HomePage />} />
+      <Route path="/videos" element={<HomePage />} />
+      <Route path="/advertise" element={<HomePage />} />
+      <Route path="/subscribe" element={<HomePage />} />
+    </Routes>
   );
 }
 

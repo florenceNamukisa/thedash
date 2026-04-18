@@ -4,59 +4,44 @@ export const ads: Ad[] = [
   { id: "a1", image: "/ads/nbk-premier-billboard.svg", title: "NBK Premier Solutions Ltd", link: "https://www.nbkpremier.com" },
   { id: "a2", image: "/legacy_pearls_ad.jpg", title: "Legacy Pearls", link: "#" },
   { id: "a3", image: "/legacy_pearls_ad.jpg", title: "Legacy Pearls", link: "#" }
-];
+]
 
-export const shorts: Short[] = [
-  {
-    id: "s1",
-    thumbnail: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=500&fit=crop",
-    title: "Rwanda's Economic Miracle: How They Did It",
-    views: "1.2M",
-    platform: "YouTube",
-    videoUrl: "https://www.youtube.com/embed/R1otxMESy1Q"
-  },
-  {
-    id: "s2",
-    thumbnail: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=300&h=500&fit=crop",
-    title: "East Africa Trade: The $50B Opportunity",
-    views: "820K",
-    platform: "YouTube",
-    videoUrl: "https://www.youtube.com/embed/Jj0u6yZ-aGk"
-  },
-  {
-    id: "s3",
-    thumbnail: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=300&h=500&fit=crop",
-    title: "Uganda Oil Discovery: What It Means for Africa",
-    views: "540K",
-    platform: "YouTube",
-    videoUrl: "https://www.youtube.com/embed/8TJnFTY4r4I"
-  },
-  {
-    id: "s4",
-    thumbnail: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&h=500&fit=crop",
-    title: "Nigeria's Tech Boom: The Silicon Valley of Africa",
-    views: "920K",
-    platform: "YouTube",
-    videoUrl: "https://www.youtube.com/embedqwerty12345"
-  },
-  {
-    id: "s5",
-    thumbnail: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=300&h=500&fit=crop",
-    title: "Kenya's Green Energy Revolution",
-    views: "450K",
-    platform: "YouTube",
-    videoUrl: "https://www.youtube.com/embed/nLmFQ2A41_0"
-  },
-  {
-    id: "s6",
-    thumbnail: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=300&h=500&fit=crop",
-    title: "Africa's Youngest Billionaires 2024",
-    views: "1.1M",
-    platform: "YouTube",
-    videoUrl: "https://www.youtube.com/embed/2F1l2gR4WqA"
-  }
-];
 export const heroSlides = [
+  {
+    id: "fintech-uganda-2026",
+    title: "Fintech Revolution in Uganda: How Mobile Money is Reshaping Financial Inclusion",
+    subtitle: "Uganda's mobile money ecosystem has evolved into a powerful engine of economic transformation, bridging the gap between traditional banking and the unbanked majority.",
+    image: "/images/fintech-investmen.avif",
+    category: "Tech"
+  },
+  {
+    id: "digital-banking-uganda-2026",
+    title: "Why Digital Banking Is No Longer Optional for Ugandans",
+    subtitle: "The world is not waiting—and neither is the future of banking. Digital banking is reshaping how Ugandans interact with their money.",
+    image: "/images/sea-banking-meta.png",
+    category: "Tech"
+  },
+  {
+    id: "ai-uganda-2026",
+    title: "Artificial Intelligence in Uganda: Transforming Industries and Creating Practical Opportunities",
+    subtitle: "As Uganda steadily deepens its digital footprint, AI is no longer an abstract, futuristic idea—it is quietly becoming a practical tool solving everyday Ugandan problems.",
+    image: "/images/airobot.webp",
+    category: "Tech"
+  },
+  {
+    id: "cybersecurity-uganda-2026",
+    title: "Cybersecurity in Uganda: Protecting Digital Assets in a Connected World",
+    subtitle: "As Uganda accelerates toward a digitally driven economy, cybersecurity is no longer a technical afterthought—it is a foundational pillar of national development.",
+    image: "/images/Cybersecurity_certiprof.webp",
+    category: "Tech"
+  },
+  {
+    id: "africa-energy-revolution-2024",
+    title: "Uganda, TotalEnergies & CNOOC Sign a $10 Billion Mega Oil Deal",
+    subtitle: "Historic agreement marks a major milestone in Uganda's energy sector development and Africa's oil industry transformation.",
+    image: "/images/Uganda-FID-1.jpg",
+    category: "Energy & Petrochemicals"
+  },
   {
     id: "h1",
     title: "Rwanda and Zimbabwe Strengthen Economic Partnerships",
@@ -89,7 +74,8 @@ export const authorData = {
       id: 1,
       title: "The Digital Horizon",
       price: "$24.99",
-      cover: "https://picsum.photos/seed/book1/300/450"
+      cover: "https://picsum.photos/seed/book1/300/450",
+      amazonLink: "https://www.amazon.com/dp/B0EXAMPLE"
     }
   ]
 };

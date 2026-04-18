@@ -34,6 +34,206 @@ const authors = ["Nicholas K. Quest", "Sarah Jenkins", "Mike Ross", "Emily Chen"
 // Clean, simple blog posts - easy to add your own content
 export const allPosts: Post[] = [
   {
+    id: "ai-uganda-2026",
+    title: "Artificial Intelligence in Uganda: Transforming Industries and Creating Practical Opportunities",
+    excerpt: "As Uganda steadily deepens its digital footprint—through mobile money, expanding internet access, and government-led digital initiatives—Artificial Intelligence (AI) is no longer an abstract, futuristic idea.",
+    category: "Tech",
+    author: "Nicholas K. Quest",
+    date: new Date("2026-04-18"),
+    image: "/images/airobot.webp",
+    isBreaking: false,
+    content: `**Artificial Intelligence in Uganda: Transforming Industries and Creating Practical Opportunities**
+
+As Uganda steadily deepens its digital footprint—through mobile money, expanding internet access, and government-led digital initiatives—Artificial Intelligence (AI) is no longer an abstract, futuristic idea. It is quietly becoming a practical tool that is solving everyday Ugandan problems. From improving healthcare access in rural districts to helping farmers make better decisions and enabling faster financial services, AI is beginning to shape how the country works and grows.
+
+What makes AI particularly relevant for Uganda is not complexity, but usefulness. At its core, AI simply refers to computer systems that can learn from data and make decisions or predictions—much like a human would, but faster and at a larger scale. In a country where resources are often stretched, this ability to "do more with less" is where AI's real value lies.
+
+**AI in Healthcare**
+
+Uganda's healthcare system faces familiar challenges: limited specialist doctors, under-resourced facilities, and long distances to quality care—especially in rural areas. AI is starting to bridge some of these gaps. For example, AI-powered diagnostic tools can assist health workers in identifying diseases such as malaria, tuberculosis, and even certain cancers using basic scans or patient data.
+
+In practical terms, this means a nurse in a district health center can use a digital tool to get quicker, more accurate guidance—reducing delays in treatment. Telemedicine platforms, some of which are emerging in Uganda, also use AI to triage patients, helping prioritize urgent cases and reduce congestion in hospitals. While still in early stages, these innovations point to a future where access to quality healthcare is less dependent on location.
+
+**AI in Agriculture**
+
+Agriculture employs the majority of Ugandans, yet it remains vulnerable to unpredictable weather, pests, and fluctuating market prices. This is where AI is becoming especially impactful.
+
+Through mobile-based platforms, farmers can now receive localized weather forecasts, planting recommendations, and pest alerts. For instance, a maize farmer in Masindi can get a simple SMS or app notification advising the best time to plant based on rainfall patterns. AI tools can also analyze crop diseases through photos, helping farmers act quickly before losses spread.
+
+For a country aiming to modernize its agriculture and improve food security, AI offers a practical pathway—turning traditional farming into more informed, data-driven decision-making without requiring farmers to be tech experts.
+
+**AI in Financial Services**
+
+Uganda is already a global leader in mobile money usage, and AI is building on that foundation. Financial institutions and fintech companies are increasingly using AI to make services faster, safer, and more inclusive.
+
+For example, many Ugandans lack formal credit histories, making it difficult to access loans. AI can analyze alternative data—such as mobile money transactions—to assess creditworthiness. This opens up access to financing for small business owners, boda boda riders, and market vendors who would otherwise be excluded.
+
+AI is also strengthening fraud detection by identifying unusual transaction patterns in real time, helping protect users in an increasingly digital financial environment. As platforms like Wendi and FlexiPay gain traction, the integration of AI will further streamline how Ugandans save, borrow, and transact.
+
+**The Ugandan Opportunity**
+
+Uganda's advantage lies in its ability to adopt AI in a targeted, problem-solving way rather than as a high-cost, experimental technology. With a young population, a growing tech ecosystem, and an increasing government focus on digital transformation, the country is well-positioned to leverage AI for inclusive growth.
+
+However, the real success of AI in Uganda will depend on awareness and accessibility. The goal is not to turn everyone into a data scientist, but to ensure that ordinary Ugandans—farmers, traders, health workers, and entrepreneurs—can benefit from tools that make their work easier and more productive.
+
+AI in Uganda is not about robots or complex algorithms. It is about smarter farming, faster healthcare, and more accessible financial services. In essence, it is about using technology to solve real problems—and in that regard, its impact is only just beginning.`
+  },
+  {
+    id: "digital-banking-uganda-2026",
+    title: "Why Digital Banking Is No Longer Optional for Ugandans",
+    excerpt: "The world is not waiting—and neither is the future of banking. Across the globe, economies are being reshaped by automation, artificial intelligence, and digital innovation.",
+    category: "Tech",
+    author: "Nicholas K. Quest",
+    date: new Date("2026-04-18"),
+    image: "/images/sea-banking-meta.png",
+    isBreaking: false,
+    content: `**Why Digital Banking Is No Longer Optional for Ugandans**
+
+The world is not waiting—and neither is the future of banking.
+
+Across the globe, economies are being reshaped by automation, artificial intelligence, and digital innovation. Banking, once defined by long queues and paperwork, is now being reimagined into something faster, smarter, and far more accessible. The question is no longer whether digital banking matters—but whether Ugandans are ready to fully embrace it.
+
+Because those who don't risk being left behind.
+
+**What Digital Banking Really Means for You**
+
+Digital banking is not just a trendy phrase—it represents a fundamental transformation in how you interact with your money, shifting banking from a place you visit to a service you carry with you. Instead of being limited by physical branches, fixed hours, and slow processes, you gain instant, on-demand access to your finances, making it easier to control, manage, and grow your money through intuitive, data-driven tools.
+
+In essence, it puts the bank in your pocket—turning your smartphone into a powerful financial hub that allows you to transact, save, borrow, and make decisions in real time, with speed, convenience, and control that traditional banking simply cannot match.
+
+From opening an account to accessing credit, from making payments to managing investments, everything is done seamlessly through your phone or computer. Behind the scenes, artificial intelligence powers decisions that used to take days—credit scoring, risk assessment, and transaction processing—now happen in minutes.
+
+For Ugandans, this translates into a banking experience defined by efficiency and control—less time spent waiting in queues, minimal paperwork, reduced reliance on physical branches, and ultimately, greater command over one's financial life.
+
+**The Real Advantage: Speed, Access, and Opportunity**
+
+Traditional banking systems were not built for speed—they were built for process. Digital banking changes that completely.
+
+**Imagine being able to:**
+
+- Open a bank account without stepping into a branch
+- Access a loan without collateral-heavy processes
+- Send and receive money instantly, anytime
+- Track and manage your finances in real time
+
+This is not convenience—it is economic empowerment.
+
+In a country where many are underserved by traditional banking, digital platforms remove barriers. They allow entrepreneurs, small business owners, and everyday earners to participate fully in the financial system.
+
+**Why Ugandans Cannot Afford to Ignore This Shift**
+
+Uganda is a young, mobile-first economy. The majority of its population is already using smartphones and mobile money. Digital banking is the natural next step—and a powerful upgrade.
+
+**By adopting digital banking, Ugandans gain:**
+
+- Greater financial inclusion – more people can access formal financial services
+- Lower transaction costs – fewer hidden charges and inefficiencies
+- Improved transparency – reduced fraud, corruption, and human interference
+- Smarter financial decisions – powered by data and personalised insights
+
+This is not just about banking—it is about unlocking economic potential at scale.
+
+**The Global Proof: This Model Works**
+
+Around the world, digital banks are not just surviving—they are dominating.
+
+From Nigeria's Kuda simplifying banking for everyday users, to Brazil's Nubank scaling to tens of millions of customers, to the UK's Monzo redefining customer experience—the pattern is clear:
+
+- Customers are choosing speed
+- Customers are choosing transparency
+- Customers are choosing digital
+
+**The Ugandan Opportunity**
+
+Uganda is at a turning point, with the infrastructure and readiness to leap into a more efficient, inclusive digital banking era. As adoption grows, so do opportunities for faster transactions, smarter financial management, and broader economic participation.
+
+The shift is already underway—the only question is whether you will embrace it. Start using digital banking today, because in a competitive economy, convenience is no longer optional; it is essential.`
+  },
+  {
+    id: "fintech-uganda-2026",
+    title: "Fintech Revolution in Uganda: How Mobile Money is Reshaping Financial Inclusion",
+    excerpt: "Uganda's mobile money ecosystem has evolved from a simple transactional tool into a powerful engine of economic transformation.",
+    category: "Tech",
+    author: "Nicholas K. Quest",
+    date: new Date("2026-04-18"),
+    image: "/images/fintech-investmen.avif",
+    isBreaking: false,
+    content: `**Fintech Revolution in Uganda: How Mobile Money is Reshaping Financial Inclusion**
+
+Uganda's mobile money ecosystem has evolved from a simple transactional tool into a powerful engine of economic transformation, fundamentally redefining how financial services are accessed, delivered, and scaled across the country. What began as a convenient way to transfer airtime has matured into a sophisticated digital financial infrastructure—one that is increasingly bridging the gap between traditional banking and the unbanked majority.
+
+**At the centre of this evolution** is the rapid expansion of mobile money platforms such as MTN Mobile Money and Airtel Money, which have become embedded in the daily lives of millions of Ugandans. These platforms have effectively replaced the need for physical bank branches for a large segment of the population, enabling users to send and receive money, pay bills, access microcredit, and manage savings directly from their mobile phones. The result is a financial system that is not only more accessible but also more responsive to the realities of a largely informal economy.
+
+However, the next phase of Uganda's fintech revolution is no longer just about access—it is about integration, interoperability, and ecosystem expansion. A notable example of this shift is the strategic partnership between Pearl Bank and Stanbic Bank, which has seen the integration of their digital wallets, Wendi and FlexiPay. This collaboration signals a decisive move away from fragmented digital systems toward a more unified financial landscape.
+
+**Wendi**, designed to bring financial services closer to underserved communities, enables users to save, transact, and even participate in group savings schemes without requiring a traditional bank account or smartphone. Meanwhile, FlexiPay offers a comprehensive, low-cost digital payment solution accessible via both smartphone apps and USSD, allowing users to perform a wide range of financial transactions seamlessly.
+
+The integration of these two platforms is particularly significant. By enabling interoperability between Wendi and FlexiPay, the partnership removes longstanding barriers between different financial networks, allowing users to transact seamlessly across platforms at lower costs. This move not only enhances convenience but also expands the reach of digital financial services to more than a million users collectively.
+
+More importantly, this collaboration reflects a broader industry realization: financial inclusion at scale requires cooperation, not competition. By connecting ecosystems rather than isolating them, financial institutions are accelerating Uganda's transition toward a truly inclusive digital economy. The impact is especially pronounced in rural and peri-urban areas, where platforms like Wendi have already been instrumental in facilitating government initiatives such as the Parish Development Model, ensuring that funds reach beneficiaries efficiently and transparently.
+
+**The implications for financial inclusion are profound.** Today, individuals who were previously excluded from formal banking can participate in the economy with greater agency—receiving payments, accessing credit, saving collectively, and even engaging in cross-border transactions through integrated digital channels. Small businesses, which form the backbone of Uganda's economy, benefit from safer, cashless transactions and improved liquidity management, reducing operational risks associated with cash handling.
+
+Ultimately, Uganda's fintech revolution is entering a more mature phase—one defined not just by innovation, but by strategic alignment between banks, telecoms, and digital platforms. The Pearl Bank–Stanbic partnership exemplifies this shift, highlighting how collaborative infrastructure can unlock new layers of economic participation.
+
+As digital adoption continues to accelerate, Uganda is not merely catching up with global financial trends—it is actively shaping a model of inclusion that is mobile-first, partnership-driven, and uniquely suited to emerging markets.`
+  },
+  {
+    id: "cybersecurity-uganda-2026",
+    title: "Cybersecurity in Uganda: Protecting Digital Assets in a Connected World",
+    excerpt: "As Uganda accelerates toward a digitally driven economy, cybersecurity is no longer a technical afterthought—it is a foundational pillar of national development.",
+    category: "Tech",
+    author: "Nicholas K. Quest",
+    date: new Date("2026-04-18"),
+    image: "/images/Cybersecurity_certiprof.webp",
+    isBreaking: false,
+    content: `**Cybersecurity in Uganda: Protecting Digital Assets in a Connected World**
+
+As Uganda accelerates toward a digitally driven economy, cybersecurity is no longer a technical afterthought—it is a foundational pillar of national development. With rising internet penetration, increased smartphone usage, and the rapid adoption of mobile money and digital services, the country's digital ecosystem is expanding at an unprecedented pace.
+
+In fact, mobile phone ownership has reached over 70%, while internet usage continues to grow steadily, signalling a shift toward a more connected society.
+
+However, this digital progress brings with it a parallel rise in cyber risk. The same infrastructure enabling financial inclusion, e-commerce, and e-government services is also widening the attack surface for cybercriminals.
+
+**Growing Threats in an Expanding Digital Economy**
+
+Cyber threats in Uganda are becoming more frequent, sophisticated, and costly. Incidents such as phishing, SIM swap fraud, ransomware, and impersonation scams are increasingly common, particularly in the mobile money ecosystem. In 2024 alone, Ugandans lost over UGX 72 billion to cybercrime, highlighting the scale and real-world impact of these threats.
+
+What makes these attacks particularly dangerous is their evolution. Cybercriminals are no longer relying solely on basic scams—they are leveraging artificial intelligence, deepfakes, and social engineering tactics to exploit trust and manipulate victims. As digital financial services deepen across the economy, the consequences of such breaches extend beyond individuals to businesses, financial institutions, and national economic stability.
+
+**Cybersecurity as a National Priority**
+
+Recognising these risks, the Government of Uganda has elevated cybersecurity to a national priority, embedding it within its broader digital transformation agenda. Institutions such as the National Information Technology Authority-Uganda (NITA-U), the Uganda Communications Commission (UCC), and the national Computer Emergency Response Team (CERT-UG) are actively working to secure critical infrastructure, respond to cyber incidents, and enforce compliance.
+
+This institutional framework is supported by a robust legal environment. The Data Protection and Privacy Act, the Computer Misuse Act, and the Electronic Transactions Act collectively provide the legal backbone for safeguarding personal data, enabling secure digital transactions, and deterring cybercrime.
+
+At a regional level, Uganda is also participating in East African Community initiatives aimed at harmonising cybersecurity standards and strengthening cross-border cooperation—an essential step given the borderless nature of cyber threats.
+
+**Bridging the Awareness and Capacity Gap**
+
+Despite these advancements, a significant gap remains between cybersecurity awareness and practical implementation. While nearly half of Ugandans are aware of cybersecurity concepts, only a small fraction fully understand data protection and privacy principles.
+
+This gap underscores a critical challenge: cybersecurity is not just a technological issue—it is a human one. Many attacks succeed not because systems are weak, but because users are unaware or unprepared. Recognising this, the government and its partners have launched nationwide awareness campaigns such as "Beera Ku Guard", aimed at promoting responsible digital behaviour and embedding cybersecurity into everyday habits.
+
+In parallel, investments in skills development—through ICT hubs, university programs, and specialised training—are helping to build a pipeline of cybersecurity professionals capable of defending Uganda's digital infrastructure.
+
+**Building a Culture of Digital Trust**
+
+Cybersecurity in Uganda is increasingly being reframed from a purely defensive function to a driver of trust, inclusion, and economic growth. A secure digital environment enables citizens to confidently use mobile money, businesses to scale online, and the government to deliver efficient digital services.
+
+As highlighted by policymakers, digital transformation must be anchored in trust, responsibility, and shared accountability. This means cybersecurity is not solely the responsibility of government or IT professionals—it is a collective effort involving individuals, businesses, and institutions.
+
+Simple practices—such as verifying information before sharing, using strong authentication methods, and safeguarding personal data—form the first line of defence in this ecosystem.
+
+**Conclusion: Securing Uganda's Digital Future**
+
+Uganda stands at a pivotal moment in its digital journey. The opportunities presented by digital finance, e-commerce, and innovation are immense, but they can only be fully realised in a secure and trusted environment.
+
+Cybersecurity, therefore, is not just about preventing attacks—it is about enabling progress. It protects livelihoods, preserves trust in digital systems, and safeguards the integrity of a rapidly modernising economy.
+
+As Uganda continues to connect, the imperative is clear: a truly inclusive digital future must also be a secure one.`
+  },
+  {
     id: "future-readiness-entrepreneurs-2026",
     title: "FUTURE-READINESS – 8 LESSONS ENTREPRENEURS MUST KEEP AT HEART",
     excerpt: "Adaptability trumps intelligence: disciplined future-readiness for entrepreneurs.",
@@ -42,51 +242,53 @@ export const allPosts: Post[] = [
     date: new Date("2026-03-31"),
     image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=450&fit=crop",
     isBreaking: false,
-    content: `FUTURE-READINESS – 8 LESSONS ENTREPRENEURS MUST KEEP AT HEART.
+content: `**FUTURE-READINESS – 8 LESSONS ENTREPRENEURS MUST KEEP AT HEART**
+
+Adaptability trumps intelligence: disciplined future-readiness for entrepreneurs.
 
 Entrepreneurs have always (and will always) known better—that learning from crisis, mistakes, and experiences is the best way to invent the future.
 
-But here’s the uncomfortable truth: the future doesn’t reward the smartest—it rewards the most adaptable.
+But here's the uncomfortable truth: the future doesn't reward the smartest—it rewards the most adaptable.
 
-Research consistently shows that businesses fail not just because of external factors, but because of internal decisions, mindset, and preparedness . Future-readiness, therefore, is not luck—it’s discipline.
+Research consistently shows that businesses fail not just because of external factors, but because of internal decisions, mindset, and preparedness. Future-readiness, therefore, is not luck—it's discipline.
 
-“It’s not the strongest that survive, but the most adaptable.” — Charles Darwin
+> "It's not the strongest that survive, but the most adaptable." — Charles Darwin
 
-1. Crisis Is a Classroom, Not a Catastrophe
+**1. Crisis Is a Classroom, Not a Catastrophe**
 
 Every disruption—economic downturns, market shifts, even personal setbacks—contains data. The entrepreneurs who win are those who extract lessons instead of emotions.
 
-2. Speed of Learning Beats Size of Capital
+**2. Speed of Learning Beats Size of Capital**
 
-Many startups fail despite funding. Why? Because they don’t learn fast enough. Execution without learning is just expensive guessing.
+Many startups fail despite funding. Why? Because they don't learn fast enough. Execution without learning is just expensive guessing.
 
-3. Build Systems, Not Hustle
+**3. Build Systems, Not Hustle**
 
 Hustle can start a business—but only systems can sustain it. Systems reduce dependency on the founder and allow scaling.
 
-4. Adaptability Is the New Competitive Advantage
+**4. Adaptability Is the New Competitive Advantage**
 
 Technology, AI, and global markets are changing industries overnight. Businesses that resist change become irrelevant.
 
-5. Understand That Failure Is Data
+**5. Understand That Failure Is Data**
 
-Failure is not the opposite of success—it’s part of it. In fact, research shows that emotional responses (like fear or confidence) directly influence business outcomes .
+Failure is not the opposite of success—it's part of it. In fact, research shows that emotional responses (like fear or confidence) directly influence business outcomes.
 
-6. Financial Discipline Is Survival
+**6. Financial Discipline Is Survival**
 
-Running out of money is one of the most common reasons businesses collapse. Many founders underestimate capital needs, even when experienced .
+Running out of money is one of the most common reasons businesses collapse. Many founders underestimate capital needs, even when experienced.
 
-7. Stay Close to Reality, Not Assumptions
+**7. Stay Close to Reality, Not Assumptions**
 
 The biggest mistake entrepreneurs make is building based on assumptions instead of real customer feedback.
 
-8. Never Stop Evolving
+**8. Never Stop Evolving**
 
 The future belongs to learners. Skills expire. Markets shift. Curiosity is the only long-term advantage.
 
-“The illiterate of the 21st century… will be those who cannot learn, unlearn, and relearn.” — Alvin Toffler
+> "The illiterate of the 21st century… will be those who cannot learn, unlearn, and relearn." — Alvin Toffler
 
-Future-readiness is not about predicting tomorrow—it’s about being ready for anything tomorrow brings.`
+Future-readiness is not about predicting tomorrow—it's about being ready for anything tomorrow brings.`
   },
   {
     id: "profession-based-entrepreneurs-go-broke-2026",
@@ -713,13 +915,19 @@ Crown Prince of Abu Dhabi and Deputy Supreme Commander of the UAE Armed Forces
     category: "Energy & Petrochemicals",
     author: "Nicholas K. Quest",
     date: new Date("2024-01-25"),
-    image: "/public/images/TotalEnergies.jpg",
+    image: "/images/Uganda-FID-1.jpg",
     isBreaking: true,
-    content: `In a landmark development for Africa's energy sector, Uganda has signed a historic $10 billion agreement with TotalEnergies and CNOOC for the development of its oil resources, marking a transformative moment for the country's economy and a signal to global investors that East Africa is open for business at scale.
+    content: `**Uganda, TotalEnergies & CNOOC Sign a $10 Billion Mega Oil Deal**
+
+**Introduction: Uganda on the Cusp of First Oil**
+
+Uganda is entering a defining phase in its economic history. After years of exploration, policy structuring, and infrastructure planning, the country is now firmly on the path to becoming a fully-fledged oil-producing nation. This transition is not merely about extracting crude; it represents a structural shift in Uganda's economic model—from a largely agrarian economy to a diversified, resource-backed growth engine. At the centre of this transformation is a $10 billion oil agreement that signals both readiness and intent, positioning Uganda as one of Africa's most closely watched emerging energy frontiers.
+
+In a landmark development for Africa's energy sector, Uganda has signed a historic $10 billion agreement with TotalEnergies and CNOOC for the development of its oil resources, marking a transformative moment for the country's economy and a signal to global investors that East Africa is open for business at scale.
 
 **What the Deal Covers**
 
-The comprehensive agreement spans the entire oil value chain. The centrepiece is the Tilenga Project — upstream oil development in Uganda's Albertine Basin — paired with the East African Crude Oil Pipeline (EACOP), a 1,443-kilometre pipeline stretching from western Uganda to the Tanzanian port of Tanga. The deal also includes provisions for a domestic refinery, upgraded transport infrastructure, and structured local content and skills development. Together, these components form one of the largest integrated energy investments ever seen on the continent.
+The comprehensive agreement spans the entire oil value chain. The centrepiece is the Tilenga Project—upstream oil development in Uganda's Albertine Basin—paired with the East African Crude Oil Pipeline (EACOP), a 1,443-kilometre pipeline stretching from western Uganda to the Tanzanian port of Tanga. The deal also includes provisions for a domestic refinery, upgraded transport infrastructure, and structured local content and skills development. Together, these components form one of the largest integrated energy investments ever seen on the continent.
 
 **The Partners**
 
@@ -751,7 +959,15 @@ The deal's success will hinge on execution. Technical complexity in a geographic
 
 > "The next growth cycle will reward those who execute early and manage risk with discipline." — Energy sector analyst
 
-The $10 billion oil deal represents a transformative opportunity for Uganda's economic development. If delivered as structured, it demonstrates how strategic partnerships between governments, national companies, and international energy majors can unlock natural resource potential in a way that is both commercially sustainable and, if managed rigorously, genuinely inclusive.`
+The $10 billion oil deal represents a transformative opportunity for Uganda's economic development. If delivered as structured, it demonstrates how strategic partnerships between governments, national companies, and international energy majors can unlock natural resource potential in a way that is both commercially sustainable and, if managed rigorously, genuinely inclusive.
+
+**Call to Action: Positioning for Uganda's Oil Economy**
+
+As Uganda accelerates toward first oil, the window for strategic entry is now. Investors, service providers, and institutions that position themselves early stand to benefit not just from the oil sector, but from the broader economic expansion it will catalyse—from infrastructure and logistics to finance, real estate, and human capital development.
+
+Navigating this emerging landscape, however, requires more than capital—it demands insight, local expertise, and the ability to align with evolving regulatory and commercial frameworks. NBK Premier Solutions is uniquely positioned to guide investors through this transition, offering end-to-end advisory, market intelligence, and strategic execution support tailored to Uganda's oil and gas ecosystem.
+
+The opportunity is no longer speculative. Uganda's oil era is taking shape. The question is not whether to engage—but how early and how effectively you position yourself within it.`
   },
   {
     id: "ai-policy-africa-2024",
@@ -1595,48 +1811,6 @@ The national team, the Silverbacks, has been representing Uganda in FIBA competi
 
   // ========== TECH BLOG POSTS ==========
   {
-    id: "ai-africa-tech-2024",
-    title: "Artificial Intelligence in Africa: Transforming Industries and Creating New Opportunities",
-    excerpt: "From healthcare to agriculture, AI technologies are being deployed across Africa to solve local challenges and drive economic growth.",
-    category: "Tech",
-    author: "Nicholas K. Quest",
-    date: new Date("2024-02-22"),
-    image: "https://iafrica.com/wp-content/uploads/2025/12/uganda-ai.png",
-    isBreaking: false,
-    content: `Artificial Intelligence is no longer a futuristic concept in Africa — it is a present-day reality transforming industries across the continent. From startups in Nairobi using AI to improve healthcare delivery to companies in Lagos leveraging machine learning for financial services, Africa is embracing AI with enthusiasm and innovation.
-
-**AI in Healthcare**
-
-One of the most promising applications of AI in Africa is in healthcare. Startups are developing AI-powered diagnostic tools that can identify diseases from medical images, potentially addressing the shortage of specialist doctors in rural areas.
-
-**AI in Agriculture**
-
-Agriculture remains the backbone of many African economies, and AI is helping farmers increase productivity and reduce losses. AI-powered apps provide farmers with weather predictions, pest identification, and optimal planting advice.
-
-**AI in Financial Services**
-
-The financial sector has been quick to adopt AI, with mobile money platforms and fintech startups leading the way. AI is being used for credit scoring, fraud detection, and personalized financial advice.`
-  },
-  {
-    id: "fintech-uganda-mobile-money",
-    title: "Fintech Revolution in Uganda: How Mobile Money is Reshaping Financial Inclusion",
-    excerpt: "Uganda's mobile money ecosystem has transformed financial services, bringing banking to millions of unbanked citizens.",
-    category: "Tech",
-    author: "Mike Ross",
-    date: new Date("2024-02-19"),
-    image: "https://businesstimesug.com/wp-content/uploads/2025/10/Julius-Kakeeto-Managing-Director-of-Pearl-Bank-formerly-PostBank-Uganda-back-left-and-Mumba-Kenneth-Kalifungwa-Chief-Executive-Stanbic-Bank-Uganda-back-right-pose-during-the-launch-in-Kampala.jpeg",
-    isBreaking: false,
-    content: `Uganda has experienced a financial revolution driven by mobile money. What started as a way to transfer airtime credits has evolved into a comprehensive financial ecosystem that has transformed how Ugandans save, borrow, and make payments.
-
-**The Growth of Mobile Money**
-
-Mobile money services like MTN Mobile Money and Airtel Money have become ubiquitous across Uganda. Millions of Ugandans who never had access to traditional banking now manage their finances through their mobile phones.
-
-**Financial Inclusion**
-
-The impact on financial inclusion has been dramatic. People can now receive payments, pay bills, and access credit through their phones. Small businesses use mobile money for transactions, reducing the risk of handling cash.`
-  },
-  {
     id: "startups-uganda-ecosystem",
     title: "Uganda's Startup Ecosystem: A Hub of Innovation in East Africa",
     excerpt: "Kampala is emerging as a startup hub, with entrepreneurs developing solutions for local challenges across various sectors.",
@@ -1655,28 +1829,7 @@ Agritech startups are helping farmers increase productivity through mobile apps 
 
 The ecosystem is supported by incubators, accelerators, and co-working spaces that provide startups with the resources they need to grow.`
   },
-  
 
-  {
-    id: "cybersecurity-uganda",
-    title: "Cybersecurity in Uganda: Protecting Digital Assets in an Connected World",
-    excerpt: "As more Ugandans come online, cybersecurity becomes increasingly critical. Experts discuss the challenges and solutions.",
-    category: "Tech",
-    author: "David Kim",
-    date: new Date("2024-02-11"),
-    image: "https://media.licdn.com/dms/image/v2/D4D12AQHIgucOvruLRg/article-cover_image-shrink_720_1280/B4DZjLyj4QGkAI-/0/1755765687013?e=2147483647&v=beta&t=OI94pN0R2Rs69cxe5zolulrBr9kc2SYvOxbi6hlwiQg",
-    isBreaking: false,
-    content: `With increasing internet penetration and digital adoption, cybersecurity has become a critical concern for Uganda.
-
-**Growing Threats**
-
-Cyber threats in Uganda include phishing attacks, malware, ransomware, and online fraud. As more businesses move online, the potential impact of these attacks grows.
-
-**Building Capacity**
-
-Uganda is working to build its cybersecurity capacity through training programs, legislation, and international partnerships.`
-  },
-  
   // ========== BUSINESS BLOG POSTS ==========
   {
     id: "uganda-economy-2024-growth",
